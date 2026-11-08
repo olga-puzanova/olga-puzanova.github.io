@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://olgapprowork-hue.github.io/olgapuzanova/sitemap.xml
+Sitemap: https://olga-puzanova.github.io/sitemap.xml
