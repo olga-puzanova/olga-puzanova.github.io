@@ -1,0 +1,1956 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Концепт: просим поисковики не показывать страницу. Убрать, когда сайт станет настоящим -->
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Кафе «Эмират» — узбекская кухня в Сургуте</title>
+    <meta
+      name="description"
+      content="Кафе «Эмират» в Сургуте: узбекская и халяльная кухня, тандыр, выпечка, доставка. Ул. Александра Усольцева, 13. Ежедневно с 09:00 до 22:00."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Цвета сайта, взяты с вывески и интерьера кафе. Меняешь здесь — меняется везде */
+      :root {
+        --bg: #f6f4ef;
+        --surface: #ffffff;
+        --text: #1f2a29;
+        --muted: #66716f;
+        --accent: #23a26a;
+        --accent-dark: #1a7f52;
+        --gold: #d8b25a;
+        --red: #d2553f;
+        --dark: #142625;
+        --dark-2: #1d3533;
+        --line: #e2ddd3;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 64px;
+      }
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: clamp(28px, 4vw, 40px);
+        margin-bottom: 12px;
+      }
+      .section {
+        padding: 72px 0;
+      }
+      .section-lead {
+        color: var(--muted);
+        margin-bottom: 36px;
+        max-width: 620px;
+      }
+
+      /* Кнопки */
+      .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-main {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-main:hover {
+        background: var(--accent-dark);
+      }
+      .btn-light {
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+      }
+
+      /* Шапка */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(20, 38, 37, 0.96);
+        color: #fff;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-size: 15px;
+        opacity: 0.85;
+      }
+      .nav-links a:hover {
+        opacity: 1;
+        color: var(--accent);
+      }
+      .nav-phone {
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Первый экран: фото зала с затемнением */
+      .hero {
+        background:
+          linear-gradient(rgba(20, 38, 37, 0.35), rgba(20, 38, 37, 0.65)),
+          url("https://i8.photo.2gis.com/photo-gallery/8a199f43-3b57-48e4-a3fc-1fc0d106fa74.jpg")
+            center / cover;
+        color: #fff;
+        padding: 110px 0 100px;
+        text-align: center;
+      }
+      .rating {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .stars {
+        color: var(--gold);
+        letter-spacing: 2px;
+      }
+      .hero h1 {
+        font-size: clamp(42px, 8vw, 76px);
+        margin-bottom: 16px;
+      }
+      .hero p {
+        font-size: 18px;
+        opacity: 0.9;
+        max-width: 580px;
+        margin: 0 auto 32px;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero-tags {
+        margin-top: 28px;
+        font-size: 14px;
+        opacity: 0.9;
+      }
+      .hero h1,
+      .hero p,
+      .hero-tags {
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+      }
+
+      /* О кафе */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .about-text p {
+        margin-bottom: 14px;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .feature {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+      }
+      .feature strong {
+        display: block;
+        font-size: 22px;
+        color: var(--accent-dark);
+      }
+      .feature span {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .about-photo {
+        border-radius: 16px;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      /* Услуги */
+      .services {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 48px;
+      }
+      .service {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 20px;
+      }
+      .service .icon {
+        font-size: 26px;
+        margin-bottom: 8px;
+      }
+      .service h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .service p {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* Заглушка для фото */
+      .ph {
+        background: linear-gradient(135deg, #dfe6e2, #c8d4cf);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6f8580;
+        text-align: center;
+      }
+
+      /* Меню */
+      .menu-bg {
+        background: var(--surface);
+      }
+
+      /* Блюдо дня */
+      .day-dish {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: center;
+        background: var(--dark);
+        color: #fff;
+        border-radius: 18px;
+        padding: 20px;
+        margin-bottom: 36px;
+      }
+      .day-label {
+        color: var(--gold);
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .day-dish h3 {
+        font-size: 26px;
+        margin: 4px 0 6px;
+      }
+      .day-dish p {
+        font-size: 14px;
+        opacity: 0.75;
+      }
+      .day-price {
+        text-align: right;
+      }
+      .day-price .new {
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--gold);
+        display: block;
+      }
+
+      /* Лента разделов меню не уезжает при прокрутке */
+      .tabs {
+        position: sticky;
+        top: 64px;
+        z-index: 5;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        background: var(--surface);
+        padding: 12px 0;
+        margin-bottom: 20px;
+        scrollbar-width: none;
+      }
+      .tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .tab {
+        flex-shrink: 0;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        padding: 10px 20px;
+        border-radius: 999px;
+        font: inherit;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      .tab.active {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+
+      .menu-list {
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 40px;
+      }
+      .menu-list.active {
+        display: grid;
+      }
+      .dish {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding-bottom: 18px;
+        border-bottom: 1px dashed var(--line);
+      }
+      .dish-img {
+        width: 88px;
+        height: 88px;
+        flex-shrink: 0;
+        border-radius: 12px;
+        object-fit: cover;
+        font-size: 11px;
+      }
+      .dish-info {
+        flex: 1;
+      }
+      .dish-name {
+        font-weight: 600;
+      }
+      .dish-desc {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 2px 0 8px;
+      }
+      .dish-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .dish-weight {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .dish-price {
+        color: var(--accent-dark);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .old {
+        text-decoration: line-through;
+        opacity: 0.55;
+        font-weight: 400;
+        font-size: 0.85em;
+        margin-right: 6px;
+      }
+
+      /* Метки на блюдах */
+      .badges {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+      .badge {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 6px;
+      }
+      .b-hit {
+        background: #f6ecd2;
+        color: #8a6a1c;
+      }
+      .b-hot {
+        background: #f8dfd9;
+        color: var(--red);
+      }
+      .b-tandyr {
+        background: #d9f0e4;
+        color: var(--accent-dark);
+      }
+      .b-new {
+        background: #dde8f6;
+        color: #2f5d94;
+      }
+
+      /* Наборы на компанию */
+      .set {
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 20px;
+        border-bottom: 1px solid var(--line);
+      }
+      .set .persons {
+        display: inline-block;
+        font-size: 13px;
+        background: var(--dark);
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 999px;
+        margin-bottom: 8px;
+      }
+      .set ul {
+        list-style: none;
+        font-size: 14px;
+        color: var(--muted);
+        margin: 8px 0 12px;
+      }
+      .set li::before {
+        content: "— ";
+      }
+
+      .note {
+        margin-top: 28px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* Доставка */
+      .delivery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .delivery-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+      }
+      .delivery-card .icon {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .delivery-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .delivery-card li {
+        list-style: none;
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      .delivery-card .muted {
+        color: var(--muted);
+      }
+      .delivery-cta {
+        margin-top: 28px;
+      }
+
+      /* Фото */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 180px;
+        gap: 12px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+      }
+      .gallery .big {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      /* Отзывы */
+      .reviews-bg {
+        background: var(--dark);
+        color: #fff;
+      }
+      .reviews-bg .section-lead {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .reviews {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .review {
+        background: var(--dark-2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 24px;
+      }
+      .review p {
+        margin: 12px 0 16px;
+        opacity: 0.9;
+      }
+      .review-name {
+        font-size: 14px;
+        opacity: 0.6;
+      }
+      .reviews-link {
+        margin-top: 32px;
+        text-align: center;
+      }
+
+      /* Контакты */
+      .contacts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .branch {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 28px;
+      }
+      .branch h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+      .branch p {
+        margin-bottom: 8px;
+      }
+      .branch .label {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .branch .btn {
+        margin-top: 12px;
+        padding: 10px 22px;
+        font-size: 15px;
+      }
+      .pay {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      footer {
+        background: var(--dark);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 28px 0;
+        font-size: 14px;
+        text-align: center;
+      }
+      .footer-links {
+        display: flex;
+        gap: 8px 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+      footer a {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .requisites {
+        margin-top: 8px;
+        font-size: 13px;
+        opacity: 0.8;
+      }
+
+      /* Плашка концепта */
+      .concept-strip {
+        background: #3a2f6b;
+        color: #fff;
+        text-align: center;
+        font-size: 13px;
+        padding: 6px 16px;
+      }
+      .demo-warning {
+        background: #fdecea;
+        color: #9b2c1f;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+
+      /* Полоса с акцией над шапкой */
+      .promo-strip {
+        background: var(--gold);
+        color: var(--dark);
+        text-align: center;
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+      .promo-strip b {
+        letter-spacing: 1px;
+      }
+      .promo-strip button {
+        margin-left: 10px;
+        border: 0;
+        cursor: pointer;
+        background: var(--dark);
+        color: #fff;
+        padding: 4px 14px;
+        border-radius: 999px;
+        font: inherit;
+        font-size: 13px;
+      }
+
+      /* Карточки услуг, которые открывают окно заказа */
+      .service[data-order] {
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .service[data-order]:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+      .service .more {
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--accent-dark);
+      }
+
+      /* КБЖУ в карточке блюда */
+      .kbju {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      .btn-small {
+        padding: 8px 18px;
+        font-size: 14px;
+        margin-top: 12px;
+        border: 0;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .promo-box {
+        background: #f6ecd2;
+        color: #6d5214;
+        border-radius: 14px;
+        padding: 16px 20px;
+        margin-top: 24px;
+      }
+
+      /* Окно заказа */
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background: rgba(10, 20, 19, 0.6);
+        display: none;
+        justify-content: center;
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 24px 16px;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .modal-box {
+        background: var(--surface);
+        border-radius: 20px;
+        max-width: 480px;
+        width: 100%;
+        padding: 28px;
+        position: relative;
+        margin: auto;
+      }
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        border: 0;
+        background: none;
+        font-size: 30px;
+        line-height: 1;
+        cursor: pointer;
+        color: var(--muted);
+      }
+      .modal h3 {
+        font-size: 26px;
+        margin-bottom: 6px;
+      }
+      .modal-promo {
+        background: #f6ecd2;
+        color: #6d5214;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+        margin: 12px 0 18px;
+      }
+      .order-types {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .order-types label {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10px 6px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .order-types input {
+        position: absolute;
+        opacity: 0;
+      }
+      .order-types label:has(input:checked) {
+        border-color: var(--accent);
+        background: #e6f5ed;
+        color: var(--accent-dark);
+        font-weight: 600;
+      }
+      .field {
+        margin-bottom: 12px;
+      }
+      .field label {
+        display: block;
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        padding: 11px 14px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        font: inherit;
+        font-size: 15px;
+        background: var(--bg);
+      }
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .consent {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+        font-size: 13px;
+        color: var(--muted);
+        margin: 8px 0 16px;
+      }
+      .modal .btn {
+        width: 100%;
+        border: 0;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+      }
+      .modal-note {
+        margin-top: 12px;
+        text-align: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .success {
+        text-align: center;
+        padding: 24px 0 8px;
+      }
+      .success .icon {
+        font-size: 48px;
+        margin-bottom: 8px;
+      }
+      .success p {
+        color: var(--muted);
+        margin: 8px 0 20px;
+      }
+
+      /* Нижняя панель: видна только на телефоне */
+      .bottom-bar {
+        display: none;
+      }
+
+      /* Телефон */
+      @media (max-width: 800px) {
+        .nav-links {
+          display: none;
+        }
+        .about-grid,
+        .contacts-grid,
+        .menu-list.active,
+        .reviews,
+        .delivery-grid {
+          grid-template-columns: 1fr;
+        }
+        .services {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+          grid-auto-rows: 140px;
+        }
+        .about-photo {
+          aspect-ratio: 4 / 3;
+        }
+        .section {
+          padding: 56px 0;
+        }
+        .day-dish {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .day-price {
+          text-align: left;
+        }
+
+        body {
+          padding-bottom: 68px;
+        }
+        .bottom-bar {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 20;
+          background: var(--dark);
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bottom-bar a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2px;
+          padding: 10px 0 12px;
+          color: #fff;
+          text-decoration: none;
+          font-size: 12px;
+        }
+        .bottom-bar span {
+          font-size: 20px;
+          line-height: 1;
+        }
+        .bottom-bar .call {
+          background: var(--accent);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Плашка концепта. Убрать, когда сайт согласуют с кафе -->
+    <div class="concept-strip">
+      Концепт сайта для кафе «Эмират». Цены, состав и часть данных условные
+    </div>
+
+    <!-- Акция на первый заказ. Скидка и промокод условные -->
+    <div class="promo-strip">
+      🎁 Скидка 10% на первый заказ по промокоду <b>ЭМИРАТ10</b>
+      <button type="button" data-order="delivery">Заказать</button>
+    </div>
+
+    <header>
+      <div class="container nav">
+        <a href="#top" class="logo">Эмират</a>
+        <ul class="nav-links">
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#delivery">Доставка</a></li>
+          <li><a href="#photo">Фото</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+        <a href="tel:+79825719191" class="nav-phone">+7 982 571-91-91</a>
+      </div>
+    </header>
+
+    <!-- Первый экран -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="rating">
+          <span class="stars">★★★★★</span> 5,0 · 20 оценок в 2ГИС
+        </div>
+        <h1>Кафе «Эмират»</h1>
+        <p>
+          Узбекская и халяльная кухня в Северном жилом районе. Плов, лагман,
+          манты и свежая выпечка из тандыра.
+        </p>
+        <div class="hero-buttons">
+          <a href="tel:+79825719191" class="btn btn-main" data-order="table"
+            >Забронировать столик</a
+          >
+          <a href="#menu" class="btn btn-light">Смотреть меню</a>
+        </div>
+        <div class="hero-tags">
+          Ежедневно 09:00–22:00 · Доставка · Средний чек 850 ₽
+        </div>
+      </div>
+    </section>
+
+    <!-- О кафе -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>О кафе</h2>
+            <p>
+              «Эмират» — кафе восточной кухни. Готовим блюда узбекской кухни по
+              традиционным рецептам, всё халяль.
+            </p>
+            <p>
+              Недавно мы обновили зал: стало больше мест, в меню появились
+              салаты и десерты. Подходит для обеда, встречи с друзьями и
+              семейного ужина.
+            </p>
+            <div class="features">
+              <div class="feature">
+                <strong>5,0</strong><span>средняя оценка гостей</span>
+              </div>
+              <div class="feature">
+                <strong>850 ₽</strong><span>средний чек</span>
+              </div>
+              <div class="feature">
+                <strong>2</strong><span>филиала в Сургуте</span>
+              </div>
+              <div class="feature">
+                <strong>09–22</strong><span>работаем каждый день</span>
+              </div>
+            </div>
+          </div>
+          <img
+            class="about-photo"
+            src="https://i2.photo.2gis.com/photo-gallery/2884b641-a6c5-4115-89fa-9459998fe4ae.jpg"
+            alt="Вывеска кафе «Эмират»"
+          />
+        </div>
+
+        <div class="services">
+          <div class="service" data-order="table">
+            <div class="icon">🍽</div>
+            <h3>Бронь столиков</h3>
+            <p>Оставим для вас стол на нужное время</p>
+            <span class="more">Забронировать →</span>
+          </div>
+          <div class="service" data-order="delivery">
+            <div class="icon">🚚</div>
+            <h3>Доставка</h3>
+            <p>Привезём заказ домой или в офис</p>
+            <span class="more">Заказать →</span>
+          </div>
+          <div class="service" data-order="pickup">
+            <div class="icon">🥡</div>
+            <h3>Навынос</h3>
+            <p>Кофе, чай и блюда с собой</p>
+            <span class="more">Заказать →</span>
+          </div>
+          <div class="service">
+            <div class="icon">📶</div>
+            <h3>Wi-Fi</h3>
+            <p>Бесплатно для гостей</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Меню. Блюда из карточки 2ГИС; цены, вес и состав условные: в 2ГИС их нет -->
+    <section class="section menu-bg" id="menu">
+      <div class="container">
+        <h2>Меню</h2>
+        <p class="section-lead">
+          Популярные блюда. Полное меню и актуальные цены уточняйте по телефону.
+        </p>
+
+        <!-- Блюдо дня -->
+        <div class="day-dish">
+          <div>
+            <div class="day-label">Блюдо дня</div>
+            <h3>Плов</h3>
+            <p>Только сегодня по специальной цене. В зале и на доставку.</p>
+          </div>
+          <div class="day-price">
+            <span class="old">350 ₽</span><span class="new">300 ₽</span
+            ><button
+              type="button"
+              class="btn btn-main btn-small"
+              data-order="delivery"
+              data-item="Плов (блюдо дня)"
+            >
+              Заказать
+            </button>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="hot">Горячее</button>
+          <button class="tab" data-tab="sets">Наборы на компанию</button>
+          <button class="tab" data-tab="street">Шаурма и пицца</button>
+          <button class="tab" data-tab="bake">Выпечка</button>
+          <button class="tab" data-tab="salad">Салаты</button>
+          <button class="tab" data-tab="drink">Напитки</button>
+        </div>
+
+        <div class="menu-list active" id="hot">
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Плов</div>
+              <div class="badges"><span class="badge b-hit">Хит</span></div>
+              <div class="dish-desc">
+                Рис девзира, говядина, морковь, нут, зира
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">350 г</span
+                ><span class="dish-price">350 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Лагман</div>
+              <div class="badges"><span class="badge b-hit">Хит</span></div>
+              <div class="dish-desc">
+                Тянутая лапша, говядина, болгарский перец, редька, томаты
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">400 г</span
+                ><span class="dish-price">380 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Манты</div>
+              <div class="dish-desc">
+                Тонкое тесто, рубленая говядина, лук. Подаём со сметаной
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">4 шт · 300 г</span
+                ><span class="dish-price">400 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Шурпа</div>
+              <div class="badges"><span class="badge b-hot">Острое</span></div>
+              <div class="dish-desc">
+                Наваристый бульон, баранина, картофель, морковь, зелень
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">400 г</span
+                ><span class="dish-price">320 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-list" id="sets">
+          <div class="dish set">
+            <div class="dish-info">
+              <span class="persons">3–4 персоны</span>
+              <div class="dish-name">Плов на компанию</div>
+              <ul>
+                <li>Плов, 1 кг</li>
+                <li>Салат ачичук</li>
+                <li>Две тандырные лепёшки</li>
+                <li>Чайник чая</li>
+              </ul>
+              <div class="dish-bottom">
+                <span class="dish-weight">Выгода 15%</span
+                ><span class="dish-price"
+                  ><span class="old">1 450 ₽</span>1 230 ₽</span
+                >
+              </div>
+              <button
+                type="button"
+                class="btn btn-main btn-small"
+                data-order="delivery"
+                data-item="Набор «Плов на компанию»"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+          <div class="dish set">
+            <div class="dish-info">
+              <span class="persons">2 персоны</span>
+              <div class="dish-name">Обед на двоих</div>
+              <ul>
+                <li>Два лагмана</li>
+                <li>Капустный салат</li>
+                <li>Тандырная лепёшка</li>
+                <li>Два компота</li>
+              </ul>
+              <div class="dish-bottom">
+                <span class="dish-weight">Выгода 10%</span
+                ><span class="dish-price"
+                  ><span class="old">1 180 ₽</span>1 060 ₽</span
+                >
+              </div>
+              <button
+                type="button"
+                class="btn btn-main btn-small"
+                data-order="delivery"
+                data-item="Набор «Обед на двоих»"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+          <div class="dish set">
+            <div class="dish-info">
+              <span class="persons">4–5 персон</span>
+              <div class="dish-name">Набор выпечки</div>
+              <ul>
+                <li>Самса, 4 шт</li>
+                <li>Пирожки, 6 шт</li>
+                <li>Чебуреки, 2 шт</li>
+              </ul>
+              <div class="dish-bottom">
+                <span class="dish-weight">Выгода 10%</span
+                ><span class="dish-price"
+                  ><span class="old">1 220 ₽</span>1 100 ₽</span
+                >
+              </div>
+              <button
+                type="button"
+                class="btn btn-main btn-small"
+                data-order="delivery"
+                data-item="Набор выпечки"
+              >
+                Заказать
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-list" id="street">
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Шаурма</div>
+              <div class="badges"><span class="badge b-hit">Хит</span></div>
+              <div class="dish-desc">
+                Курица, свежие овощи, фирменный соус, лаваш
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">350 г</span
+                ><span class="dish-price">300 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Шаурма острая</div>
+              <div class="badges"><span class="badge b-hot">Острое</span></div>
+              <div class="dish-desc">Курица, овощи, острый соус, лаваш</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">350 г</span
+                ><span class="dish-price">320 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Пицца</div>
+              <div class="dish-desc">
+                Несколько видов на выбор, уточняйте у администратора
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">30 см</span
+                ><span class="dish-price">550 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Хот-дог</div>
+              <div class="dish-desc">Сосиска, булочка, овощи, соусы</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">200 г</span
+                ><span class="dish-price">200 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-list" id="bake">
+          <div class="dish">
+            <img
+              class="dish-img"
+              src="https://i2.photo.2gis.com/photo-gallery/d1c72a6c-0bcb-45d0-8ed2-41f6c9f9a4b2.jpg"
+              alt="Выпечка"
+            />
+            <div class="dish-info">
+              <div class="dish-name">Пирожки</div>
+              <div class="dish-desc">
+                С картофелем, капустой или мясом. Печём каждый день
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">1 шт · 100 г</span
+                ><span class="dish-price">80 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Самса</div>
+              <div class="badges">
+                <span class="badge b-tandyr">Из тандыра</span>
+              </div>
+              <div class="dish-desc">
+                Слоёное тесто, рубленая говядина, лук, кунжут
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">1 шт · 150 г</span
+                ><span class="dish-price">120 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Лепёшка</div>
+              <div class="badges">
+                <span class="badge b-tandyr">Из тандыра</span>
+              </div>
+              <div class="dish-desc">
+                Горячая, с кунжутом. Можно взять с собой
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">250 г</span
+                ><span class="dish-price">70 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Хачапури</div>
+              <div class="dish-desc">Тесто, сыр сулугуни</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">250 г</span
+                ><span class="dish-price">250 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Чебурек</div>
+              <div class="dish-desc">
+                Хрустящее тесто, сочная мясная начинка
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">1 шт · 180 г</span
+                ><span class="dish-price">130 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Пышки</div>
+              <div class="dish-desc">С сахарной пудрой</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">3 шт</span
+                ><span class="dish-price">60 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-list" id="salad">
+          <div class="dish">
+            <img
+              class="dish-img"
+              src="https://i2.photo.2gis.com/photo-gallery/52dc31a2-17d4-46de-a42b-7eafbb388a49.jpg"
+              alt="Салат"
+            />
+            <div class="dish-info">
+              <div class="dish-name">Салат с картофелем пай</div>
+              <div class="badges"><span class="badge b-new">Новинка</span></div>
+              <div class="dish-desc">
+                Яйцо, огурец, ветчина, хрустящий картофель, майонез
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">250 г</span
+                ><span class="dish-price">280 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <img
+              class="dish-img"
+              src="https://i5.photo.2gis.com/photo-gallery/d814ceb5-6672-4f76-874b-0a1439ba7aaa.jpg"
+              alt="Салат с сыром"
+            />
+            <div class="dish-info">
+              <div class="dish-name">Салат с сыром</div>
+              <div class="badges"><span class="badge b-new">Новинка</span></div>
+              <div class="dish-desc">Овощи, тёртый сыр, соус</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">250 г</span
+                ><span class="dish-price">300 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Ачичук</div>
+              <div class="dish-desc">
+                Помидоры, лук, зелень. Лучше всего к плову
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">200 г</span
+                ><span class="dish-price">180 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Капустный салат</div>
+              <div class="dish-desc">Свежая капуста, морковь, зелень</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">200 г</span
+                ><span class="dish-price">150 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-list" id="drink">
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Чай в чайнике</div>
+              <div class="dish-desc">Чёрный или зелёный. Можно с собой</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">800 мл</span
+                ><span class="dish-price">150 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Кофе</div>
+              <div class="dish-desc">
+                Американо, капучино, латте. Можно с собой
+              </div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">300 мл</span
+                ><span class="dish-price">180 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="dish">
+            <div class="dish-info">
+              <div class="dish-name">Компот</div>
+              <div class="dish-desc">Домашний, из сухофруктов</div>
+              <div class="kbju">
+                <span title="Белки">Б … г</span><span title="Жиры">Ж … г</span
+                ><span title="Углеводы">У … г</span><span>… ккал</span>
+              </div>
+              <div class="dish-bottom">
+                <span class="dish-weight">500 мл</span
+                ><span class="dish-price">100 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="note">
+          Черновик: блюда взяты из 2ГИС, а цены, вес, состав и наборы условные.
+          Заменим, когда получим меню кафе.
+        </p>
+      </div>
+    </section>
+
+    <!-- Доставка. Условия доставки в 2ГИС не указаны -->
+    <section class="section" id="delivery">
+      <div class="container">
+        <h2>Доставка и самовывоз</h2>
+        <p class="section-lead">
+          Закажите по телефону: привезём домой или соберём с собой.
+        </p>
+        <div class="delivery-grid">
+          <div class="delivery-card">
+            <div class="icon">🚚</div>
+            <h3>Доставка</h3>
+            <ul>
+              <li>Каждый день с 09:00 до 22:00</li>
+              <li class="muted">Зона доставки: уточняется</li>
+              <li class="muted">Минимальный заказ: уточняется</li>
+              <li class="muted">Время доставки: уточняется</li>
+            </ul>
+          </div>
+          <div class="delivery-card">
+            <div class="icon">🥡</div>
+            <h3>С собой</h3>
+            <ul>
+              <li>Позвоните заранее, и заказ будет готов к вашему приходу</li>
+              <li>Кофе и чай с собой</li>
+              <li>Забрать можно в обоих филиалах</li>
+            </ul>
+          </div>
+          <div class="delivery-card">
+            <div class="icon">💳</div>
+            <h3>Оплата</h3>
+            <ul>
+              <li>Картой</li>
+              <li>Наличными</li>
+              <li>По QR-коду</li>
+              <li>Переводом</li>
+            </ul>
+          </div>
+        </div>
+        <div class="promo-box">
+          🎁 Первый заказ? Скидка 10% по промокоду <b>ЭМИРАТ10</b>. Укажите его
+          в заявке.
+        </div>
+        <div class="delivery-cta">
+          <button
+            type="button"
+            class="btn btn-main btn-small"
+            data-order="delivery"
+            style="font-size: 16px; padding: 14px 28px"
+          >
+            Оформить заказ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Фото из карточки 2ГИС -->
+    <section class="section" id="photo">
+      <div class="container">
+        <h2>Фото</h2>
+        <p class="section-lead">Зал, блюда и выпечка.</p>
+        <div class="gallery">
+          <img
+            class="big"
+            src="https://i4.photo.2gis.com/photo-gallery/5df651a1-b84f-48ec-a309-c891da259c80.jpg"
+            alt="Вход в кафе «Эмират»"
+            loading="lazy"
+          />
+          <img
+            src="https://i8.photo.2gis.com/photo-gallery/8a199f43-3b57-48e4-a3fc-1fc0d106fa74.jpg"
+            alt="Зал кафе"
+            loading="lazy"
+          />
+          <img
+            src="https://i9.photo.2gis.com/photo-gallery/7f5e63de-c317-4a95-bba7-84f0e7232461.jpg"
+            alt="Зал кафе"
+            loading="lazy"
+          />
+          <img
+            src="https://i2.photo.2gis.com/photo-gallery/d1c72a6c-0bcb-45d0-8ed2-41f6c9f9a4b2.jpg"
+            alt="Выпечка"
+            loading="lazy"
+          />
+          <img
+            src="https://i2.photo.2gis.com/photo-gallery/52dc31a2-17d4-46de-a42b-7eafbb388a49.jpg"
+            alt="Салат"
+            loading="lazy"
+          />
+          <img
+            src="https://i5.photo.2gis.com/photo-gallery/90c21763-d0ec-487f-9733-730a15f060ed.jpg"
+            alt="Интерьер"
+            loading="lazy"
+          />
+          <img
+            src="https://i5.photo.2gis.com/photo-gallery/d814ceb5-6672-4f76-874b-0a1439ba7aaa.jpg"
+            alt="Салат с сыром"
+            loading="lazy"
+          />
+          <img
+            src="https://i8.photo.2gis.com/photo-gallery/9c6cf79e-491a-46b4-92b6-5ef17600c8c3.jpg"
+            alt="Вывеска вечером"
+            loading="lazy"
+          />
+          <img
+            src="https://i1.photo.2gis.com/photo-gallery/86383260-9577-4dd5-acc0-2488419294fe.jpg"
+            alt="Интерьер"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Отзывы из 2ГИС, сокращены -->
+    <section class="section reviews-bg" id="reviews">
+      <div class="container">
+        <h2>Отзывы гостей</h2>
+        <p class="section-lead">Средняя оценка 5,0 по 20 оценкам в 2ГИС.</p>
+        <div class="reviews">
+          <div class="review">
+            <span class="stars">★★★★★</span>
+            <p>
+              «Брала плов и капустный салат. Порции огромные, плов рассыпчатый,
+              мясо мягкое. Зал был полный, но еду принесли почти моментально».
+            </p>
+            <div class="review-name">Гостья, август 2026</div>
+          </div>
+          <div class="review">
+            <span class="stars">★★★★★</span>
+            <p>
+              «Всё очень вкусно, обслуживание быстрое. Чисто и красиво внутри и
+              снаружи. Подойдёт и молодёжи, и семьям с детьми».
+            </p>
+            <div class="review-name">Татьяна, август 2026</div>
+          </div>
+          <div class="review">
+            <span class="stars">★★★★★</span>
+            <p>
+              «Всегда свежая еда, ароматная выпечка, настоящий тандыр. Порции
+              щедрые, персонал вежливый».
+            </p>
+            <div class="review-name">Мамиржон, август 2026</div>
+          </div>
+          <div class="review">
+            <span class="stars">★★★★★</span>
+            <p>
+              «После ремонта стало намного лучше: больше мест, появились салаты
+              и сладкое, шаурма стала вкуснее».
+            </p>
+            <div class="review-name">Гость, сентябрь 2026</div>
+          </div>
+        </div>
+        <div class="reviews-link">
+          <a
+            href="https://2gis.ru/surgut/firm/70000001115688865/tab/reviews"
+            target="_blank"
+            class="btn btn-light"
+            >Все отзывы в 2ГИС</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section" id="contacts">
+      <div class="container">
+        <h2>Как нас найти</h2>
+        <p class="section-lead">Ждём вас каждый день с 09:00 до 22:00.</p>
+        <div class="contacts-grid">
+          <div class="branch">
+            <h3>На Усольцева</h3>
+            <p>
+              <span class="label">Адрес:</span> ул. Александра Усольцева, 13,
+              41-й мкр, Северный жилой район
+            </p>
+            <p>
+              <span class="label">Время работы:</span> ежедневно 09:00–22:00
+            </p>
+            <p>
+              <span class="label">Телефон:</span>
+              <a href="tel:+79825719191">+7 982 571-91-91</a>
+            </p>
+            <p>
+              <span class="label">Как добраться:</span> остановка «Есенина», 2
+              минуты пешком. Рядом парковка
+            </p>
+            <a
+              href="https://2gis.ru/surgut/firm/70000001115688865"
+              target="_blank"
+              class="btn btn-main"
+              >Открыть на карте</a
+            >
+          </div>
+          <div class="branch">
+            <h3>В ЖК «Дорожный»</h3>
+            <p><span class="label">Адрес:</span> посёлок МК-37, 13/1</p>
+            <p><span class="label">Время работы:</span> уточняется</p>
+            <p><span class="label">Телефон:</span> уточняется</p>
+            <p><span class="label">Особенность:</span> кофе с собой</p>
+            <a
+              href="https://2gis.ru/surgut/search/%D0%AD%D0%BC%D0%B8%D1%80%D0%B0%D1%82%20%D0%BA%D0%B0%D1%84%D0%B5"
+              target="_blank"
+              class="btn btn-main"
+              >Открыть на карте</a
+            >
+          </div>
+        </div>
+        <p class="pay">Оплата: картой, наличными, по QR-коду, переводом.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        © Кафе «Эмират», Сургут
+        <div class="footer-links">
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="consent.html">Согласие на обработку данных</a>
+        </div>
+        <!-- Реквизиты: впишет кафе -->
+        <div class="requisites">
+          ИП / ООО «______» · ИНН ____________ · ОГРН ____________
+        </div>
+      </div>
+    </footer>
+
+    <!-- Нижняя панель для телефона -->
+    <nav class="bottom-bar">
+      <a href="#menu"><span>📋</span>Меню</a>
+      <a href="#delivery" class="call" data-order="delivery"
+        ><span>🛍</span>Заказать</a
+      >
+      <a href="tel:+79825719191"><span>📞</span>Позвонить</a>
+      <a href="https://2gis.ru/surgut/firm/70000001115688865" target="_blank"
+        ><span>📍</span>Маршрут</a
+      >
+    </nav>
+
+    <!-- Окно заказа. Пока демо: заявка никуда не отправляется -->
+    <div class="modal" id="order">
+      <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="order-title"
+      >
+        <button type="button" class="modal-close" aria-label="Закрыть">
+          ×
+        </button>
+
+        <form id="order-form">
+          <h3 id="order-title">Оформить доставку</h3>
+          <div class="modal-promo">
+            🎁 Первый заказ? Скидка 10% по промокоду <b>ЭМИРАТ10</b>
+          </div>
+          <div class="demo-warning">
+            Это демо-версия: заявка никуда не отправляется. Не вводите настоящие
+            данные.
+          </div>
+
+          <div class="order-types">
+            <label
+              ><input type="radio" name="type" value="delivery" checked />🚚
+              Доставка</label
+            >
+            <label
+              ><input type="radio" name="type" value="pickup" />🥡 С
+              собой</label
+            >
+            <label
+              ><input type="radio" name="type" value="table" />🍽 Бронь
+              стола</label
+            >
+          </div>
+
+          <div class="field">
+            <label for="f-name">Ваше имя</label
+            ><input id="f-name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label
+            ><input
+              id="f-phone"
+              name="phone"
+              type="tel"
+              placeholder="+7 ___ ___-__-__"
+              required
+            />
+          </div>
+
+          <div class="field" data-for="delivery">
+            <label for="f-address">Адрес доставки</label
+            ><input
+              id="f-address"
+              name="address"
+              placeholder="Улица, дом, квартира"
+              required
+            />
+          </div>
+
+          <div class="field" data-for="pickup">
+            <label for="f-branch">Филиал</label>
+            <select id="f-branch" name="branch">
+              <option>ул. Александра Усольцева, 13</option>
+              <option>ЖК «Дорожный», МК-37, 13/1</option>
+            </select>
+          </div>
+
+          <div class="field-row" data-for="table">
+            <div class="field">
+              <label for="f-date">Дата и время</label
+              ><input
+                id="f-date"
+                name="datetime"
+                type="datetime-local"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="f-guests">Гостей</label
+              ><input
+                id="f-guests"
+                name="guests"
+                type="number"
+                min="1"
+                max="14"
+                value="2"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field" data-for="delivery pickup">
+            <label for="f-items">Что заказать</label
+            ><textarea
+              id="f-items"
+              name="items"
+              rows="3"
+              placeholder="Например: плов, 2 самсы, чай"
+            ></textarea>
+          </div>
+          <div class="field">
+            <label for="f-promo">Промокод</label
+            ><input id="f-promo" name="promo" placeholder="Если есть" />
+          </div>
+
+          <label class="consent"
+            ><input type="checkbox" required /><span
+              >Даю
+              <a href="consent.html" target="_blank"
+                >согласие на обработку персональных данных</a
+              >
+              и принимаю
+              <a href="privacy.html" target="_blank"
+                >политику конфиденциальности</a
+              ></span
+            ></label
+          >
+
+          <button type="submit" class="btn btn-main">
+            Отправить заявку (демо)
+          </button>
+          <p class="modal-note">Мы перезвоним, чтобы подтвердить заказ.</p>
+        </form>
+
+        <div class="success" hidden>
+          <div class="icon">✅</div>
+          <h3>Заявка принята</h3>
+          <p>
+            Мы перезвоним вам, чтобы подтвердить детали.<br /><small
+              >Демо-версия: заявка никуда не отправляется.</small
+            >
+          </p>
+          <button type="button" class="btn btn-main modal-done">Хорошо</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Окно заказа: открывается любой кнопкой с data-order
+      var modal = document.getElementById("order");
+      var form = document.getElementById("order-form");
+      var success = modal.querySelector(".success");
+      var titles = {
+        delivery: "Оформить доставку",
+        pickup: "Заказ с собой",
+        table: "Забронировать стол",
+      };
+
+      // Показываем только поля для выбранного способа. Скрытые поля отключаем, чтобы они не мешали отправке
+      function setType(type) {
+        form.querySelector('input[value="' + type + '"]').checked = true;
+        document.getElementById("order-title").textContent = titles[type];
+        form.querySelectorAll("[data-for]").forEach(function (group) {
+          var show = group.dataset.for.split(" ").indexOf(type) !== -1;
+          group.hidden = !show;
+          group
+            .querySelectorAll("input, select, textarea")
+            .forEach(function (el) {
+              el.disabled = !show;
+            });
+        });
+      }
+
+      function openOrder(type, item) {
+        form.hidden = false;
+        success.hidden = true;
+        setType(type || "delivery");
+        if (item) document.getElementById("f-items").value = item;
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+        document.getElementById("f-name").focus();
+      }
+
+      function closeOrder() {
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll("[data-order]").forEach(function (el) {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          openOrder(el.dataset.order, el.dataset.item);
+        });
+      });
+
+      form.querySelectorAll('input[name="type"]').forEach(function (radio) {
+        radio.addEventListener("change", function () {
+          setType(radio.value);
+        });
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        form.hidden = true;
+        success.hidden = false;
+        form.reset();
+      });
+
+      modal.querySelector(".modal-close").addEventListener("click", closeOrder);
+      modal.querySelector(".modal-done").addEventListener("click", closeOrder);
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) closeOrder();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeOrder();
+      });
+
+      // Переключение вкладок меню
+      document.querySelectorAll(".tab").forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          document.querySelectorAll(".tab").forEach(function (t) {
+            t.classList.remove("active");
+          });
+          document.querySelectorAll(".menu-list").forEach(function (m) {
+            m.classList.remove("active");
+          });
+          tab.classList.add("active");
+          document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

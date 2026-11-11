@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ПРЫЖОК — тренировки с Эльвиной Боднар</title>
+    <meta
+      name="description"
+      content="Домашние тренировки по 20–25 минут от мастера спорта по гимнастике. Закрытый Telegram-клуб."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== Цвета и базовые настройки ===== */
+      :root {
+        --ink: #151515; /* почти чёрный для текста */
+        --paper: #ffffff; /* фон */
+        --soft: #f4f2ee; /* светло-серый фон блоков */
+        --coral: #ff5a3c; /* главный акцент */
+        --lime: #d4ff3a; /* второй акцент */
+        --muted: #6b6b6b; /* второстепенный текст */
+        --radius: 28px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Manrope", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        font-size: 18px;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      .logo,
+      .btn,
+      .num {
+        font-family: "Unbounded", sans-serif;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 100px 0;
+      }
+      h2 {
+        font-size: clamp(32px, 5vw, 56px);
+        line-height: 1.05;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+      .tag {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        background: var(--lime);
+        padding: 6px 14px;
+        border-radius: 99px;
+        margin-bottom: 18px;
+      }
+
+      /* ===== Кнопки ===== */
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 20px 34px;
+        border-radius: 99px;
+        background: var(--coral);
+        color: #fff;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 6px 0 var(--ink);
+      }
+      .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 0 var(--ink);
+      }
+      .btn.dark {
+        background: var(--ink);
+        box-shadow: 0 6px 0 var(--coral);
+      }
+
+      /* ===== Шапка ===== */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        border-bottom: 2px solid var(--ink);
+      }
+      header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      .logo {
+        font-weight: 900;
+        font-size: 22px;
+        text-decoration: none;
+      }
+      .logo span {
+        color: var(--coral);
+      }
+      nav a {
+        text-decoration: none;
+        font-weight: 700;
+        margin-left: 26px;
+        font-size: 15px;
+      }
+      nav a:hover {
+        color: var(--coral);
+      }
+      header .btn {
+        padding: 12px 22px;
+        font-size: 13px;
+        box-shadow: none;
+      }
+
+      /* ===== Первый экран ===== */
+      .hero {
+        padding: 60px 0 120px;
+        position: relative;
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: clamp(40px, 6.4vw, 84px);
+        line-height: 0.98;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .hero h1 .jump {
+        color: var(--coral);
+        display: inline-block;
+        animation: jump 2.4s ease-in-out infinite;
+      }
+      .hero h1 .hl {
+        background: var(--lime);
+        padding: 0 10px;
+        display: inline-block;
+        transform: rotate(-2deg);
+      }
+      .hero p {
+        font-size: 20px;
+        margin: 28px 0 36px;
+        max-width: 520px;
+        color: #333;
+      }
+      .hero-note {
+        margin-top: 20px;
+        font-size: 15px;
+        color: var(--muted);
+      }
+      @keyframes jump {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-18px) rotate(-3deg);
+        }
+        60% {
+          transform: translateY(0);
+        }
+      }
+
+      /* Фото с дугой батута */
+      .hero-photo {
+        position: relative;
+        aspect-ratio: 4/5;
+      }
+      .photo {
+        width: 100%;
+        height: 100%;
+        border-radius: var(--radius);
+        border: 2px solid var(--ink);
+        background: linear-gradient(160deg, #ffd9cf, #ff8a70);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 20px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 14px;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+      }
+      .hero-photo .photo {
+        transform: rotate(3deg);
+        background: #8e8e8e url("photos/elvina-hero.jpg") center / cover
+          no-repeat;
+      }
+      .sticker {
+        position: absolute;
+        background: var(--lime);
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: "Unbounded";
+        font-weight: 900;
+        line-height: 1;
+        left: -40px;
+        bottom: 40px;
+        transform: rotate(-12deg);
+        animation: float 4s ease-in-out infinite;
+      }
+      .sticker b {
+        font-size: 42px;
+      }
+      .sticker small {
+        font-size: 12px;
+        font-weight: 700;
+        margin-top: 4px;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: rotate(-12deg) translateY(0);
+        }
+        50% {
+          transform: rotate(-8deg) translateY(-10px);
+        }
+      }
+      .arc {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 90px;
+      }
+
+      /* ===== Бегущая строка ===== */
+      .ticker {
+        background: var(--ink);
+        color: var(--lime);
+        transform: rotate(-2deg);
+        margin: -30px -20px 0;
+        padding: 18px 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .ticker div {
+        display: inline-block;
+        animation: run 22s linear infinite;
+        font-family: "Unbounded";
+        font-weight: 700;
+        font-size: 22px;
+        text-transform: uppercase;
+      }
+      .ticker span {
+        margin: 0 24px;
+        color: var(--coral);
+      }
+      @keyframes run {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ===== Для кого ===== */
+      .who-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .who-card {
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        background: var(--paper);
+        transition:
+          transform 0.25s,
+          background 0.25s;
+      }
+      .who-card:nth-child(odd) {
+        transform: rotate(-1.5deg);
+      }
+      .who-card:nth-child(even) {
+        transform: rotate(1.5deg);
+      }
+      .who-card:hover {
+        transform: rotate(0) translateY(-8px);
+        background: var(--lime);
+      }
+      .who-card .emoji {
+        font-size: 38px;
+        margin-bottom: 14px;
+      }
+      .who-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      .who-card p {
+        font-size: 16px;
+        color: #444;
+      }
+
+      /* ===== Как это работает ===== */
+      .how {
+        background: var(--soft);
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        counter-reset: s;
+      }
+      .step {
+        position: relative;
+        padding-top: 10px;
+      }
+      .step .num {
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--ink);
+      }
+      .step:nth-child(2) .num {
+        color: var(--coral);
+        -webkit-text-stroke: 0;
+      }
+      .step h3 {
+        font-size: 22px;
+        margin: 12px 0 8px;
+      }
+      .step p {
+        color: #444;
+      }
+
+      /* ===== Что внутри ===== */
+      .inside-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .box {
+        border-radius: var(--radius);
+        padding: 32px;
+        border: 2px solid var(--ink);
+      }
+      .box h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .box p {
+        color: #333;
+        font-size: 16px;
+      }
+      .box.big {
+        grid-column: span 2;
+        background: var(--coral);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 260px;
+      }
+      .box.big p {
+        color: #fff;
+      }
+      .box.big .min {
+        font-family: "Unbounded";
+        font-weight: 900;
+        font-size: clamp(56px, 8vw, 110px);
+        line-height: 0.9;
+      }
+      .box.lime {
+        background: var(--lime);
+      }
+      .box.dark {
+        background: var(--ink);
+        color: #fff;
+      }
+      .box.dark p {
+        color: #ccc;
+      }
+
+      /* ===== Уровни ===== */
+      .levels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .level {
+        border-radius: var(--radius);
+        padding: 40px;
+        border: 2px solid var(--ink);
+        position: relative;
+        overflow: hidden;
+      }
+      .level h3 {
+        font-size: 28px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+      .level ul {
+        list-style: none;
+      }
+      .level li {
+        padding: 10px 0 10px 34px;
+        position: relative;
+        border-top: 1px dashed rgba(0, 0, 0, 0.25);
+      }
+      .level li::before {
+        content: "↗";
+        position: absolute;
+        left: 0;
+        font-weight: 900;
+        color: var(--coral);
+      }
+      .level.pro {
+        background: var(--ink);
+        color: #fff;
+      }
+      .level.pro li {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+      .level.pro li::before {
+        color: var(--lime);
+      }
+      .bars {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 20px;
+      }
+      .bars i {
+        width: 30px;
+        height: 10px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.12);
+      }
+      .bars i.on {
+        background: var(--coral);
+      }
+      .level.pro .bars i {
+        background: rgba(255, 255, 255, 0.18);
+      }
+      .level.pro .bars i.on {
+        background: var(--lime);
+      }
+
+      /* ===== Обо мне ===== */
+      .about .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .about .photo {
+        aspect-ratio: 1/1.15;
+        transform: rotate(-3deg);
+        background: linear-gradient(160deg, #eaffb0, #b8e600);
+      }
+      .about p {
+        margin-bottom: 18px;
+        font-size: 19px;
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 30px;
+      }
+      .fact {
+        border-top: 3px solid var(--ink);
+        padding-top: 12px;
+      }
+      .fact b {
+        font-family: "Unbounded";
+        font-size: 30px;
+        font-weight: 900;
+        display: block;
+        color: var(--coral);
+      }
+      .fact span {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      /* ===== Отзывы ===== */
+      .reviews {
+        background: var(--ink);
+        color: #fff;
+      }
+      .rev-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .rev {
+        background: #232323;
+        border-radius: var(--radius);
+        padding: 28px;
+      }
+      .rev .ba {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .rev .ba div {
+        aspect-ratio: 3/4;
+        border-radius: 16px;
+        background: #3a3a3a;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 8px;
+        font-size: 12px;
+        color: #999;
+      }
+      .rev .ba div:last-child {
+        background: var(--coral);
+        color: #fff;
+      }
+      .rev p {
+        font-size: 16px;
+        color: #ddd;
+        margin-bottom: 14px;
+      }
+      .rev b {
+        color: var(--lime);
+      }
+
+      /* ===== Цена ===== */
+      .price-card {
+        max-width: 760px;
+        margin: 0 auto;
+        border: 3px solid var(--ink);
+        border-radius: 40px;
+        padding: 50px;
+        text-align: center;
+        position: relative;
+        background: var(--paper);
+        box-shadow: 14px 14px 0 var(--lime);
+      }
+      .price-card .sum {
+        font-family: "Unbounded";
+        font-weight: 900;
+        font-size: clamp(54px, 9vw, 96px);
+        line-height: 1;
+        margin: 16px 0 6px;
+      }
+      .price-card .sum small {
+        font-size: 24px;
+      }
+      .price-card ul {
+        list-style: none;
+        text-align: left;
+        max-width: 440px;
+        margin: 30px auto;
+      }
+      .price-card li {
+        padding: 8px 0 8px 34px;
+        position: relative;
+      }
+      .price-card li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--lime);
+        text-align: center;
+        line-height: 24px;
+        font-weight: 900;
+        font-size: 14px;
+        top: 10px;
+      }
+      .start {
+        position: absolute;
+        top: -22px;
+        right: 30px;
+        background: var(--coral);
+        color: #fff;
+        font-family: "Unbounded";
+        font-weight: 700;
+        padding: 10px 18px;
+        border-radius: 99px;
+        transform: rotate(4deg);
+        font-size: 14px;
+      }
+
+      /* ===== Вопросы ===== */
+      .faq {
+        background: var(--soft);
+      }
+      details {
+        border-bottom: 2px solid var(--ink);
+        padding: 24px 0;
+      }
+      summary {
+        font-family: "Unbounded";
+        font-weight: 700;
+        font-size: 19px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::after {
+        content: "+";
+        font-size: 28px;
+        line-height: 1;
+        color: var(--coral);
+        transition: transform 0.2s;
+      }
+      details[open] summary::after {
+        transform: rotate(45deg);
+      }
+      details p {
+        margin-top: 14px;
+        color: #444;
+        max-width: 780px;
+      }
+
+      /* ===== Финальный призыв и подвал ===== */
+      .final {
+        background: var(--coral);
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .final h2 {
+        font-size: clamp(36px, 7vw, 88px);
+      }
+      .final p {
+        font-size: 20px;
+        margin-bottom: 36px;
+      }
+      .final .btn {
+        background: var(--lime);
+        color: var(--ink);
+      }
+      footer {
+        background: var(--ink);
+        color: #aaa;
+        padding: 50px 0;
+        font-size: 14px;
+      }
+      footer .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      footer a {
+        color: #fff;
+        margin-right: 18px;
+      }
+
+      /* ===== Появление блоков при прокрутке ===== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.7s,
+          transform 0.7s;
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ===== Телефоны ===== */
+      @media (max-width: 900px) {
+        section {
+          padding: 70px 0;
+        }
+        nav {
+          display: none;
+        }
+        .hero {
+          padding: 30px 0 90px;
+        }
+        .hero .wrap,
+        .about .wrap,
+        .levels {
+          grid-template-columns: 1fr;
+        }
+        .hero-photo,
+        .about .photo {
+          width: 100%;
+          max-width: 360px;
+          margin: 0 auto;
+        }
+        .sticker {
+          width: 110px;
+          height: 110px;
+          left: -10px;
+        }
+        .sticker b {
+          font-size: 32px;
+        }
+        .who-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .steps,
+        .rev-grid,
+        .inside-grid {
+          grid-template-columns: 1fr;
+        }
+        .box.big {
+          grid-column: auto;
+        }
+        .price-card {
+          padding: 40px 22px;
+          box-shadow: 8px 8px 0 var(--lime);
+        }
+      }
+      @media (max-width: 520px) {
+        body {
+          font-size: 16px;
+        }
+        .who-grid {
+          grid-template-columns: 1fr;
+        }
+        .facts {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        .fact b {
+          font-size: 22px;
+        }
+        header .btn {
+          display: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      html { overflow-x: clip; }
+    </style>
+  </head>
+  <body>
+    <!-- Шапка -->
+    <header>
+      <div class="wrap">
+        <a href="#" class="logo">ПРЫЖ<span>О</span>К</a>
+        <nav>
+          <a href="#inside">Что внутри</a>
+          <a href="#about">Обо мне</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#faq">Вопросы</a>
+        </nav>
+        <a href="#price" class="btn">В клуб</a>
+      </div>
+    </header>
+
+    <!-- Первый экран -->
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="tag">Онлайн-клуб в Telegram</span>
+          <h1>
+            20 минут <span class="jump">в день</span><br />и ты
+            <span class="hl">в форме</span>
+          </h1>
+          <p>
+            Домашние тренировки от мастера спорта по гимнастике и многодетной
+            мамы. Без зала, без диет, без «начну с понедельника».
+          </p>
+          <a href="#price" class="btn">Хочу в клуб</a>
+          <div class="hero-note">Старт ближайшего потока: 1 декабря</div>
+        </div>
+        <div class="hero-photo">
+          <div
+            class="photo"
+            role="img"
+            aria-label="Эльвина делает стойку на руках со шпагатом"
+          ></div>
+          <div class="sticker">
+            <b>20</b><small>минут —<br />и готово</small>
+          </div>
+        </div>
+      </div>
+      <!-- дуга батута -->
+      <svg
+        class="arc"
+        viewBox="0 0 1200 90"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M0 10 Q600 110 1200 10"
+          fill="none"
+          stroke="#151515"
+          stroke-width="3"
+        />
+      </svg>
+    </section>
+
+    <!-- Бегущая строка -->
+    <div class="ticker" aria-hidden="true">
+      <div>
+        Дома <span>●</span> 20–25 минут <span>●</span> Без диет
+        <span>●</span> Для мам <span>●</span> Два уровня <span>●</span> Чат с
+        тренером <span>●</span> Дома <span>●</span> 20–25 минут
+        <span>●</span> Без диет <span>●</span> Для мам <span>●</span> Два уровня
+        <span>●</span> Чат с тренером <span>●</span>
+      </div>
+    </div>
+
+    <!-- Для кого -->
+    <section>
+      <div class="wrap">
+        <span class="tag">Для кого</span>
+        <h2>Клуб подойдёт,<br />если ты…</h2>
+        <div class="who-grid">
+          <div class="who-card reveal">
+            <div class="emoji">👶</div>
+            <h3>Мама</h3>
+            <p>На себя есть только 20 минут, пока дети спят.</p>
+          </div>
+          <div class="who-card reveal">
+            <div class="emoji">🌱</div>
+            <h3>Новичок</h3>
+            <p>Давно не занималась и боишься не потянуть.</p>
+          </div>
+          <div class="who-card reveal">
+            <div class="emoji">🤱</div>
+            <h3>После родов</h3>
+            <p>Хочешь мягко вернуть тело в тонус.</p>
+          </div>
+          <div class="who-card reveal">
+            <div class="emoji">🔥</div>
+            <h3>Уже в спорте</h3>
+            <p>Нужна нагрузка посильнее и чёткий план.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Как это работает -->
+    <section class="how">
+      <div class="wrap">
+        <span class="tag">Как это работает</span>
+        <h2>Три шага<br />до первой тренировки</h2>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num">01</div>
+            <h3>Оплачиваешь участие</h3>
+            <p>Выбираешь тариф и оплачиваешь онлайн.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">02</div>
+            <h3>Попадаешь в канал</h3>
+            <p>Сразу получаешь ссылку на закрытый Telegram-канал и чат.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">03</div>
+            <h3>Тренируешься</h3>
+            <p>Включаешь видео в любое удобное время и повторяешь за мной.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Что внутри -->
+    <section id="inside">
+      <div class="wrap">
+        <span class="tag">Что внутри</span>
+        <h2>Всё, что нужно,<br />в одном канале</h2>
+        <div class="inside-grid">
+          <div class="box big reveal">
+            <div class="min">20–25<br />мин</div>
+            <div>
+              <h3>Видеотренировки</h3>
+              <p>
+                Цельное видео: я веду счёт, объясняю технику и не даю сдаться.
+                Просто включи и повторяй.
+              </p>
+            </div>
+          </div>
+          <div class="box lime reveal">
+            <h3>💬 Чат со мной</h3>
+            <p>
+              Задаёшь вопрос — получаешь ответ. Про технику, питание,
+              восстановление.
+            </p>
+          </div>
+          <div class="box reveal">
+            <h3>📈 Два уровня</h3>
+            <p>Новичок и продвинутый. Выбираешь нагрузку под себя.</p>
+          </div>
+          <div class="box dark reveal">
+            <h3>🏆 Челленджи</h3>
+            <p>Соревнуемся всем клубом. Так проще не бросить.</p>
+          </div>
+          <div class="box reveal">
+            <h3>🎁 Бонусы</h3>
+            <p>Растяжка, упражнения для осанки и мини-тренировки на 5 минут.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Уровни -->
+    <section style="padding-top: 0">
+      <div class="wrap">
+        <span class="tag">Уровни</span>
+        <h2>Выбери<br />свою нагрузку</h2>
+        <div class="levels">
+          <div class="level reveal">
+            <div class="bars">
+              <i class="on"></i><i class="on"></i><i></i><i></i>
+            </div>
+            <h3>Новичок</h3>
+            <ul>
+              <li>Если только начинаешь</li>
+              <li>Если восстанавливаешься после родов</li>
+              <li>Если любишь спокойный темп</li>
+            </ul>
+          </div>
+          <div class="level pro reveal">
+            <div class="bars">
+              <i class="on"></i><i class="on"></i><i class="on"></i
+              ><i class="on"></i>
+            </div>
+            <h3>Продвинутый</h3>
+            <ul>
+              <li>Если прошла уровень «Новичок»</li>
+              <li>Если хочешь нагрузку сильнее</li>
+              <li>Если готова к прыжкам и силовым</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Обо мне -->
+    <section class="about how" id="about">
+      <div class="wrap">
+        <div class="photo reveal">Фото Эльвины с детьми или в зале</div>
+        <div class="reveal">
+          <span class="tag">Обо мне</span>
+          <h2>Привет,<br />я Эльвина</h2>
+          <p>
+            Я мастер спорта международного класса по спортивной гимнастике.
+            Сейчас тренирую детей прыжкам на батуте.
+          </p>
+          <p>
+            А ещё я многодетная мама сыновей. Поэтому знаю, как сложно найти
+            время на себя. Мои тренировки короткие, но работают на всё тело.
+          </p>
+          <div class="facts">
+            <div class="fact"><b>МСМК</b><span>по гимнастике</span></div>
+            <div class="fact"><b>10+</b><span>лет тренирую</span></div>
+            <div class="fact"><b>3</b><span>сына</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews" id="reviews">
+      <div class="wrap">
+        <span class="tag">Результаты</span>
+        <h2>Девочки<br />уже прыгают</h2>
+        <div class="rev-grid">
+          <div class="rev reveal">
+            <div class="ba">
+              <div>до</div>
+              <div>после</div>
+            </div>
+            <p>
+              «Впервые не бросила через неделю. 20 минут реально нахожу даже с
+              двумя детьми».
+            </p>
+            <b>Анна, −4 кг за месяц</b>
+          </div>
+          <div class="rev reveal">
+            <div class="ba">
+              <div>до</div>
+              <div>после</div>
+            </div>
+            <p>«После вторых родов думала, что пресс не вернуть. Вернулся!»</p>
+            <b>Мария, 2-й поток</b>
+          </div>
+          <div class="rev reveal">
+            <div class="ba">
+              <div>до</div>
+              <div>после</div>
+            </div>
+            <p>
+              «Нравится, что Эльвина всё объясняет. Ощущение, будто она рядом».
+            </p>
+            <b>Ольга, 3-й поток</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Цена -->
+    <section id="price">
+      <div class="wrap">
+        <div class="price-card reveal">
+          <div class="start">Старт 1 декабря</div>
+          <span class="tag">Участие</span>
+          <h3 style="font-size: 24px">Месяц в клубе «Прыжок»</h3>
+          <div class="sum">1990 <small>₽</small></div>
+          <div style="color: var(--muted)">за 4 недели</div>
+          <ul>
+            <li>Доступ в закрытый Telegram-канал</li>
+            <li>Тренировки двух уровней</li>
+            <li>Чат с Эльвиной и участницами</li>
+            <li>Челленджи и бонусы</li>
+            <li>Скидка на следующий месяц</li>
+          </ul>
+          <a href="#" class="btn">Оплатить и вступить</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Вопросы -->
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <span class="tag">Вопросы</span>
+        <h2>Частые вопросы</h2>
+        <details>
+          <summary>Нужен ли инвентарь?</summary>
+          <p>
+            Нет. Хватит коврика. Для продвинутого уровня пригодятся гантели или
+            бутылки с водой.
+          </p>
+        </details>
+        <details>
+          <summary>Я никогда не занималась. Справлюсь?</summary>
+          <p>
+            Да. Начни с уровня «Новичок». Я показываю облегчённые варианты
+            каждого упражнения.
+          </p>
+        </details>
+        <details>
+          <summary>Можно ли после родов?</summary>
+          <p>
+            Можно, после разрешения врача. На уровне «Новичок» есть мягкие
+            тренировки для восстановления.
+          </p>
+        </details>
+        <details>
+          <summary>Сколько хранится доступ к видео?</summary>
+          <p>Все видео потока доступны до конца оплаченного месяца.</p>
+        </details>
+        <details>
+          <summary>Как оплатить?</summary>
+          <p>
+            Картой онлайн по кнопке выше. После оплаты сразу придёт ссылка на
+            канал.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Финальный призыв -->
+    <section class="final">
+      <div class="wrap">
+        <h2>Прыгаем<br />вместе?</h2>
+        <p>Первая тренировка через 5 минут после оплаты.</p>
+        <a href="#price" class="btn">Хочу в клуб</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div>
+          <a href="#" target="_blank"
+            >Instagram</a
+          >
+          <a href="#" target="_blank">Telegram</a>
+          <a href="#" target="_blank">WhatsApp</a>
+        </div>
+        <div>
+          ИП Боднар Э. · ИНН 000000000000 · <a href="#">Оферта</a>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Плавное появление блоков при прокрутке
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("show");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

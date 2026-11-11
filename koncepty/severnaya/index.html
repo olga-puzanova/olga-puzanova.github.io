@@ -1,0 +1,1368 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Северная линия — женская одежда в Сургуте</title>
+    <meta
+      name="description"
+      content="Магазин женской одежды в Сургуте. Пальто, трикотаж, платья. Примерка дома и запись к стилисту."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Цвета и размеры сайта в одном месте */
+      :root {
+        --milk: #f6f1ea;
+        --paper: #fffdf9;
+        --graphite: #2b2a28;
+        --gray: #6f6a63;
+        --line: #e4dcd1;
+        --terra: #b5643f;
+        --terra-dark: #964f30;
+        --radius: 4px;
+        --wrap: 1180px;
+        --ease: cubic-bezier(0.2, 0, 0, 1);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Manrope", system-ui, sans-serif;
+        background: var(--milk);
+        color: var(--graphite);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        line-height: 1.1;
+      }
+      h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        margin-bottom: 12px;
+      }
+      .wrap {
+        max-width: var(--wrap);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      section {
+        padding: 88px 0;
+      }
+      .lead {
+        color: var(--gray);
+        max-width: 560px;
+        margin-bottom: 40px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        border: 1px solid var(--graphite);
+        background: var(--graphite);
+        color: var(--paper);
+        border-radius: var(--radius);
+        font-size: 15px;
+        transition:
+          background-color 0.2s var(--ease),
+          border-color 0.2s var(--ease),
+          color 0.2s var(--ease);
+      }
+      .btn:hover {
+        background: var(--terra);
+        border-color: var(--terra);
+      }
+      .btn-light {
+        background: transparent;
+        color: var(--graphite);
+      }
+      .btn-light:hover {
+        color: var(--paper);
+      }
+
+      /* Шапка */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(246, 241, 234, 0.94);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line);
+      }
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+        gap: 20px;
+      }
+      .head-actions {
+        display: flex;
+        gap: 8px;
+      }
+      .menu-btn {
+        display: none;
+        border: 1px solid var(--line);
+        background: none;
+        padding: 8px 16px;
+        border-radius: var(--radius);
+      }
+      .logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 26px;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+      }
+      .logo span {
+        color: var(--terra);
+      }
+      nav {
+        display: flex;
+        gap: 28px;
+        font-size: 15px;
+      }
+      nav a:hover {
+        color: var(--terra);
+      }
+      .cart-btn {
+        border: 1px solid var(--graphite);
+        background: none;
+        padding: 8px 16px;
+        border-radius: var(--radius);
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .cart-count {
+        background: var(--terra);
+        color: #fff;
+        border-radius: 12px;
+        min-width: 24px;
+        height: 24px;
+        font-size: 12px;
+        display: grid;
+        place-items: center;
+      }
+
+      /* Первый экран */
+      .hero {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 640px;
+      }
+      .hero-text {
+        padding: 80px 64px 80px
+          max(20px, calc((100vw - var(--wrap)) / 2 + 20px));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero-text small {
+        color: var(--terra-dark);
+        font-size: 15px;
+      }
+      .hero h1 {
+        font-size: clamp(44px, 6vw, 80px);
+        margin: 16px 0 24px;
+      }
+      .hero p {
+        color: var(--gray);
+        max-width: 440px;
+        margin-bottom: 36px;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .hero-img {
+        background: url("https://images.unsplash.com/photo-1617391258031-f8d80b22fb35?w=1200&q=80")
+          center/cover;
+      }
+
+      /* Плюсы магазина */
+      .perks {
+        padding: 0;
+        background: var(--graphite);
+        color: var(--milk);
+      }
+      .perks .wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .perk {
+        padding: 28px 24px;
+        border-left: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .perk:first-child {
+        border-left: 0;
+      }
+      .perk b {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .perk span {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      /* Каталог */
+      .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+      }
+      .chip {
+        border: 1px solid var(--line);
+        background: var(--paper);
+        padding: 8px 16px;
+        border-radius: var(--radius);
+        font-size: 14px;
+        transition:
+          background-color 0.2s var(--ease),
+          border-color 0.2s var(--ease),
+          color 0.2s var(--ease);
+      }
+      .chip.active,
+      .chip:hover {
+        background: var(--graphite);
+        color: var(--paper);
+        border-color: var(--graphite);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px 20px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+      }
+      .card-img {
+        position: relative;
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
+        background: var(--line);
+        margin-bottom: 16px;
+      }
+      .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--paper);
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: var(--radius);
+      }
+      .card h3 {
+        font-family: "Manrope", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s var(--ease);
+      }
+      .card:hover h3 {
+        color: var(--terra-dark);
+      }
+      .price {
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        margin: 4px 0 12px;
+      }
+      .sizes {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
+      .size {
+        width: 36px;
+        height: 32px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        font-size: 13px;
+        border-radius: var(--radius);
+      }
+      .size.picked {
+        border-color: var(--graphite);
+        background: var(--graphite);
+        color: #fff;
+      }
+      .add {
+        margin-top: auto;
+        padding: 10px;
+        border: 1px solid var(--graphite);
+        background: none;
+        border-radius: var(--radius);
+        font-size: 14px;
+        transition:
+          background-color 0.2s var(--ease),
+          color 0.2s var(--ease);
+      }
+      .add:hover {
+        background: var(--graphite);
+        color: #fff;
+      }
+
+      /* Образы */
+      .looks {
+        background: var(--paper);
+      }
+      .looks-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .look {
+        position: relative;
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+      }
+      .look img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      .look-info {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        background: var(--paper);
+        padding: 20px;
+        border-radius: var(--radius);
+      }
+      .look-info h3 {
+        font-size: 28px;
+      }
+      .look-info p {
+        font-size: 14px;
+        color: var(--gray);
+        margin: 4px 0 12px;
+      }
+      .look-info .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .look-info a {
+        color: var(--terra);
+        font-size: 14px;
+        border-bottom: 1px solid;
+      }
+
+      /* Примерка дома */
+      .fitting .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .fitting img {
+        aspect-ratio: 1;
+        object-fit: cover;
+        width: 100%;
+      }
+      .steps {
+        list-style: none;
+        counter-reset: s;
+        margin: 28px 0 36px;
+      }
+      .steps li {
+        counter-increment: s;
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .steps li::before {
+        content: counter(s);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        color: var(--terra);
+        line-height: 1;
+        min-width: 24px;
+      }
+      .steps b {
+        display: block;
+      }
+      .steps span {
+        color: var(--gray);
+        font-size: 15px;
+      }
+
+      /* Стилист */
+      .stylist {
+        background: var(--graphite);
+        color: var(--milk);
+      }
+      .stylist .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .stylist .lead {
+        color: rgba(246, 241, 234, 0.7);
+      }
+      .stylist ul {
+        list-style: none;
+      }
+      .stylist li {
+        padding: 8px 0 8px 24px;
+        position: relative;
+      }
+      .stylist li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--terra);
+      }
+      form {
+        background: var(--paper);
+        color: var(--graphite);
+        padding: 36px;
+        border-radius: var(--radius);
+      }
+      form h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        color: var(--gray);
+        margin-bottom: 8px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        font: inherit;
+        margin-bottom: 16px;
+        background: #fff;
+      }
+      form .btn {
+        width: 100%;
+      }
+      .note {
+        font-size: 12px;
+        color: var(--gray);
+        margin-top: 12px;
+        text-align: center;
+      }
+      .done {
+        display: none;
+        text-align: center;
+        padding: 40px 0;
+      }
+      .done h3 {
+        margin-bottom: 8px;
+      }
+
+      /* Таблица размеров */
+      .table-wrap {
+        overflow-x: auto;
+        background: var(--paper);
+        border-radius: var(--radius);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 560px;
+      }
+      th,
+      td {
+        padding: 16px 20px;
+        text-align: left;
+        border-bottom: 1px solid var(--line);
+        font-size: 15px;
+      }
+      th {
+        font-weight: 600;
+        background: var(--line);
+      }
+
+      /* Отзывы */
+      .reviews {
+        background: var(--paper);
+      }
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .review {
+        border: 1px solid var(--line);
+        padding: 28px;
+        border-radius: var(--radius);
+      }
+      .review p {
+        margin-bottom: 16px;
+      }
+      .review small {
+        color: var(--gray);
+      }
+
+      /* Контакты */
+      .contacts .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+      .contacts dl div {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .contacts dt {
+        font-size: 13px;
+        color: var(--gray);
+      }
+      .contacts img {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        object-fit: cover;
+      }
+      .tg {
+        margin-top: 28px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0;
+        font-size: 13px;
+        color: var(--gray);
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      /* Корзина */
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s var(--ease);
+        z-index: 30;
+      }
+      .drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(400px, 100%);
+        background: var(--paper);
+        z-index: 31;
+        transform: translateX(100%);
+        transition: transform 0.3s var(--ease);
+        display: flex;
+        flex-direction: column;
+        padding: 28px;
+      }
+      .cart-open .overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .cart-open .drawer {
+        transform: none;
+      }
+      .drawer-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .drawer-head h3 {
+        font-size: 30px;
+      }
+      .close {
+        background: none;
+        border: 0;
+        font-size: 28px;
+        line-height: 1;
+      }
+      .cart-items {
+        flex: 1;
+        overflow-y: auto;
+      }
+      .cart-item {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+      }
+      .cart-item img {
+        width: 64px;
+        height: 84px;
+        object-fit: cover;
+      }
+      .cart-item button {
+        background: none;
+        border: 0;
+        color: var(--gray);
+        font-size: 13px;
+        text-decoration: underline;
+      }
+      .total {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        padding: 20px 0;
+      }
+      .empty {
+        color: var(--gray);
+      }
+
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translate(-50%, 20px);
+        opacity: 0;
+        background: var(--graphite);
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: var(--radius);
+        font-size: 14px;
+        transition:
+          opacity 0.3s var(--ease),
+          transform 0.3s var(--ease);
+        z-index: 40;
+        pointer-events: none;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
+      /* Телефон и планшет */
+      @media (max-width: 960px) {
+        nav {
+          display: none;
+        }
+        .menu-btn {
+          display: block;
+        }
+        .nav-open .menu-btn {
+          background: var(--graphite);
+          border-color: var(--graphite);
+          color: var(--paper);
+        }
+        .nav-open nav {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          position: absolute;
+          top: 72px;
+          left: 0;
+          right: 0;
+          padding: 8px 20px 16px;
+          background: var(--milk);
+          border-bottom: 1px solid var(--line);
+        }
+        .nav-open nav a {
+          padding: 12px 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .nav-open nav a:last-child {
+          border-bottom: 0;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .perks .wrap {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .perk:nth-child(3) {
+          border-left: 0;
+        }
+        .looks-grid,
+        .reviews-grid {
+          grid-template-columns: 1fr;
+        }
+        .look {
+          aspect-ratio: 4 / 3;
+        }
+      }
+      @media (max-width: 760px) {
+        section {
+          padding: 64px 0;
+        }
+        .logo {
+          font-size: 22px;
+          letter-spacing: 0;
+        }
+        .menu-btn,
+        .cart-btn {
+          padding: 8px 12px;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: 0;
+        }
+        .hero-img {
+          height: 420px;
+          order: -1;
+        }
+        .hero-text {
+          padding: 40px 20px 56px;
+        }
+        .fitting .wrap,
+        .stylist .wrap,
+        .contacts .wrap {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        form {
+          padding: 24px;
+        }
+        .grid {
+          gap: 24px 12px;
+        }
+        .size {
+          width: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap head">
+        <a href="#" class="logo">Северная <span>линия</span></a>
+        <nav>
+          <a href="#catalog">Каталог</a>
+          <a href="#looks">Образы</a>
+          <a href="#fitting">Примерка дома</a>
+          <a href="#stylist">Стилист</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <div class="head-actions">
+          <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+          >
+            Меню
+          </button>
+          <button class="cart-btn" id="openCart">
+            Корзина <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Первый экран -->
+    <section class="hero">
+      <div class="hero-text">
+        <small>Новая коллекция · Зима 2026</small>
+        <h1>Тёплая одежда, в которой красиво</h1>
+        <p>
+          Пальто, трикотаж и платья для северной зимы. Привезём на примерку
+          домой по Сургуту, оплата только за то, что подошло.
+        </p>
+        <div class="hero-btns">
+          <a href="#catalog" class="btn">Смотреть новинки</a>
+          <a href="#stylist" class="btn btn-light">Записаться к стилисту</a>
+        </div>
+      </div>
+      <div
+        class="hero-img"
+        role="img"
+        aria-label="Девушка в пальто на снегу"
+      ></div>
+    </section>
+
+    <!-- Плюсы -->
+    <section class="perks">
+      <div class="wrap">
+        <div class="perk">
+          <b>Примерка дома</b><span>Привезём до 5 вещей</span>
+        </div>
+        <div class="perk">
+          <b>Доставка за 1 день</b><span>Бесплатно по Сургуту</span>
+        </div>
+        <div class="perk">
+          <b>Отложим вещь</b><span>На 24 часа без оплаты</span>
+        </div>
+        <div class="perk">
+          <b>Стилист</b><span>Подберёт образ бесплатно</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Каталог -->
+    <section id="catalog">
+      <div class="wrap">
+        <h2>Каталог</h2>
+        <p class="lead">
+          Базовые вещи, которые легко сочетать между собой. Размеры с 42 по 52.
+        </p>
+        <div class="filters" id="filters">
+          <button class="chip active" data-cat="all">Все</button>
+          <button class="chip" data-cat="coat">Верхняя одежда</button>
+          <button class="chip" data-cat="knit">Трикотаж</button>
+          <button class="chip" data-cat="dress">Платья</button>
+          <button class="chip" data-cat="pants">Брюки и костюмы</button>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <!-- Образы -->
+    <section class="looks" id="looks">
+      <div class="wrap">
+        <h2>Готовые образы</h2>
+        <p class="lead">
+          Стилист уже собрал комплект. Можно взять целиком или по одной вещи.
+        </p>
+        <div class="looks-grid">
+          <div class="look">
+            <img
+              src="https://images.unsplash.com/photo-1634052358355-17b73d9f0501?w=800&q=80"
+              alt="Образ с тренчем"
+              loading="lazy"
+            />
+            <div class="look-info">
+              <h3>В офис</h3>
+              <p>Тренч, водолазка, прямые брюки</p>
+              <div class="row">
+                <b>24 700 ₽</b><a href="#catalog">Смотреть вещи</a>
+              </div>
+            </div>
+          </div>
+          <div class="look">
+            <img
+              src="https://images.unsplash.com/photo-1632149877166-f75d49000351?w=800&q=80"
+              alt="Образ с белым пальто"
+              loading="lazy"
+            />
+            <div class="look-info">
+              <h3>Зимний город</h3>
+              <p>Белое пальто, свитер, сапоги</p>
+              <div class="row">
+                <b>31 400 ₽</b><a href="#catalog">Смотреть вещи</a>
+              </div>
+            </div>
+          </div>
+          <div class="look">
+            <img
+              src="https://images.unsplash.com/photo-1603152699084-5bd05dfe8ca9?w=800&q=80"
+              alt="Образ с белым жакетом"
+              loading="lazy"
+            />
+            <div class="look-info">
+              <h3>На выходные</h3>
+              <p>Жакет, футболка, широкие брюки</p>
+              <div class="row">
+                <b>17 900 ₽</b><a href="#catalog">Смотреть вещи</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Примерка дома -->
+    <section class="fitting" id="fitting">
+      <div class="wrap">
+        <img
+          src="https://images.unsplash.com/photo-1603400521630-9f2de124b33b?w=900&q=80"
+          alt="Вешалка с одеждой спокойных оттенков"
+          loading="lazy"
+        />
+        <div>
+          <h2>Примерка дома</h2>
+          <p class="lead">
+            Не нужно ехать в торговый центр по морозу. Мы приедем сами.
+          </p>
+          <ol class="steps">
+            <li>
+              <div>
+                <b>Выберите до 5 вещей</b
+                ><span>Добавьте их в корзину и оформите примерку.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <b>Курьер приедет в удобное время</b
+                ><span>В тот же или на следующий день. Подождёт 20 минут.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <b>Оплатите только то, что подошло</b
+                ><span
+                  >Остальное курьер заберёт с собой. Доставка бесплатная.</span
+                >
+              </div>
+            </li>
+          </ol>
+          <a href="#catalog" class="btn">Выбрать вещи</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Стилист -->
+    <section class="stylist" id="stylist">
+      <div class="wrap">
+        <div>
+          <h2>Запись к стилисту</h2>
+          <p class="lead">
+            Консультация бесплатная и длится около часа. Проходит в нашем
+            магазине.
+          </p>
+          <ul>
+            <li>Определим ваш размер и подходящие фасоны</li>
+            <li>Соберём 2–3 образа из того, что есть в наличии</li>
+            <li>Подскажем, что сочетать с вещами из вашего гардероба</li>
+            <li>Покупать что-то не обязательно</li>
+          </ul>
+        </div>
+        <form id="form">
+          <div id="formFields">
+            <h3>Оставьте заявку</h3>
+            <label for="name">Как к вам обращаться</label>
+            <input id="name" required placeholder="Анна" />
+            <label for="phone">Телефон</label>
+            <input
+              id="phone"
+              type="tel"
+              required
+              placeholder="+7 900 000-00-00"
+            />
+            <label for="time">Удобное время</label>
+            <select id="time">
+              <option>Будни, днём</option>
+              <option>Будни, вечером</option>
+              <option>Выходные</option>
+            </select>
+            <button class="btn" type="submit">Записаться</button>
+            <p class="note">Это демо-версия. Заявка никуда не отправляется.</p>
+          </div>
+          <div class="done" id="done">
+            <h3>Заявка принята</h3>
+            <p>Мы перезвоним вам в течение часа и подтвердим время.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Таблица размеров -->
+    <section id="sizes">
+      <div class="wrap">
+        <h2>Таблица размеров</h2>
+        <p class="lead">
+          Если сомневаетесь между двумя размерами, напишите нам. Подскажем по
+          конкретной модели.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Размер</th>
+              <th>Международный</th>
+              <th>Обхват груди, см</th>
+              <th>Обхват талии, см</th>
+              <th>Обхват бёдер, см</th>
+            </tr>
+            <tr>
+              <td>42</td>
+              <td>XS</td>
+              <td>84</td>
+              <td>66</td>
+              <td>92</td>
+            </tr>
+            <tr>
+              <td>44</td>
+              <td>S</td>
+              <td>88</td>
+              <td>70</td>
+              <td>96</td>
+            </tr>
+            <tr>
+              <td>46</td>
+              <td>M</td>
+              <td>92</td>
+              <td>74</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>48</td>
+              <td>L</td>
+              <td>96</td>
+              <td>78</td>
+              <td>104</td>
+            </tr>
+            <tr>
+              <td>50</td>
+              <td>XL</td>
+              <td>100</td>
+              <td>82</td>
+              <td>108</td>
+            </tr>
+            <tr>
+              <td>52</td>
+              <td>XXL</td>
+              <td>104</td>
+              <td>86</td>
+              <td>112</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+      <div class="wrap">
+        <h2>Отзывы</h2>
+        <p class="lead">Пишут покупательницы из Сургута.</p>
+        <div class="reviews-grid">
+          <div class="review">
+            <p>
+              Заказала три пальто на примерку. Курьер приехал вечером, спокойно
+              подождал. Оставила одно, сидит идеально.
+            </p>
+            <small>Мария, 34 года</small>
+          </div>
+          <div class="review">
+            <p>
+              Была у стилиста первый раз. Собрали два образа на работу, о
+              которых я сама бы не подумала. Без навязывания.
+            </p>
+            <small>Екатерина, 41 год</small>
+          </div>
+          <div class="review">
+            <p>
+              Хороший трикотаж, не колется и не скатывается после стирки.
+              Удобно, что можно отложить вещь до вечера.
+            </p>
+            <small>Алина, 28 лет</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts" id="contacts">
+      <div class="wrap">
+        <div>
+          <h2>Контакты</h2>
+          <dl>
+            <div>
+              <dt>Адрес</dt>
+              <dd>Сургут, ул. Северная, 1 (адрес условный)</dd>
+            </div>
+            <div>
+              <dt>Режим работы</dt>
+              <dd>Ежедневно с 10:00 до 21:00</dd>
+            </div>
+            <div>
+              <dt>Телефон</dt>
+              <dd>+7 (900) 000-00-00</dd>
+            </div>
+            <div>
+              <dt>Telegram-канал</dt>
+              <dd>Новинки, образы и поступления раз в неделю</dd>
+            </div>
+          </dl>
+          <a href="#" class="btn tg">Подписаться в Telegram</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1525562723836-dca67a71d5f1?w=900&q=80"
+          alt="Покупательница выбирает одежду"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <span
+          >© 2026 «Северная линия». Пример сайта для портфолио, магазин
+          придуман.</span
+        >
+        <span>Фото: Unsplash</span>
+      </div>
+    </footer>
+
+    <!-- Корзина -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="drawer">
+      <div class="drawer-head">
+        <h3>Корзина</h3>
+        <button class="close" id="closeCart" aria-label="Закрыть">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="total"><span>Итого</span><span id="cartTotal">0 ₽</span></div>
+      <button class="btn" id="checkout">Оформить примерку</button>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+      // Товары каталога: название, раздел, цена, фото
+      const img = (id) => `https://images.unsplash.com/photo-${id}?w=600&q=80`;
+      const products = [
+        {
+          id: 1,
+          name: "Пальто из шерсти, карамель",
+          cat: "coat",
+          price: 18900,
+          tag: "Новинка",
+          photo: img("1539533113208-f6df8cc8b543"),
+        },
+        {
+          id: 2,
+          name: "Пальто прямое, молочное",
+          cat: "coat",
+          price: 21500,
+          tag: "Новинка",
+          photo: img("1652473291442-7a2e034a00d1"),
+        },
+        {
+          id: 3,
+          name: "Пальто с поясом, кэмел",
+          cat: "coat",
+          price: 19900,
+          photo: img("1618244972963-dbee1a7edc95"),
+        },
+        {
+          id: 4,
+          name: "Тренч классический",
+          cat: "coat",
+          price: 12900,
+          photo: img("1676716105765-e19fe6a01851"),
+        },
+        {
+          id: 5,
+          name: "Свитер крупной вязки",
+          cat: "knit",
+          price: 6900,
+          tag: "Хит",
+          photo: img("1588271968087-4c51abe05afc"),
+        },
+        {
+          id: 6,
+          name: "Джемпер из мериноса, серый",
+          cat: "knit",
+          price: 5400,
+          photo: img("1574201635302-388dd92a4c3f"),
+        },
+        {
+          id: 7,
+          name: "Кардиган пушистый, сливочный",
+          cat: "knit",
+          price: 7200,
+          photo: img("1773747310674-b42a55d72003"),
+        },
+        {
+          id: 8,
+          name: "Платье миди, чёрное",
+          cat: "dress",
+          price: 8900,
+          photo: img("1759229874810-26aa9a3dda92"),
+        },
+        {
+          id: 9,
+          name: "Платье макси, шоколад",
+          cat: "dress",
+          price: 9600,
+          tag: "Новинка",
+          photo: img("1763551229890-64e97d845251"),
+        },
+        {
+          id: 10,
+          name: "Костюм с брюками, чёрный",
+          cat: "pants",
+          price: 14800,
+          photo: img("1584273143981-41c073dfe8f8"),
+        },
+        {
+          id: 11,
+          name: "Брюки широкие, бежевые",
+          cat: "pants",
+          price: 5900,
+          photo: img("1789110853687-71692f0e86be"),
+        },
+        {
+          id: 12,
+          name: "Жакет оверсайз, песочный",
+          cat: "pants",
+          price: 10400,
+          photo: img("1590873802674-55bb8f947bc5"),
+        },
+      ];
+      const sizes = [42, 44, 46, 48, 50];
+      const rub = (n) => n.toLocaleString("ru-RU") + " ₽";
+
+      // Рисуем карточки товаров
+      const grid = document.getElementById("grid");
+      function render(cat) {
+        const list =
+          cat === "all" ? products : products.filter((p) => p.cat === cat);
+        grid.innerHTML = list
+          .map(
+            (p) => `
+      <div class="card" data-id="${p.id}">
+        <div class="card-img">
+          <img src="${p.photo}" alt="${p.name}" loading="lazy">
+          ${p.tag ? `<span class="tag">${p.tag}</span>` : ""}
+        </div>
+        <h3>${p.name}</h3>
+        <div class="price">${rub(p.price)}</div>
+        <div class="sizes">${sizes.map((s) => `<button class="size">${s}</button>`).join("")}</div>
+        <button class="add">В корзину</button>
+      </div>`,
+          )
+          .join("");
+      }
+      render("all");
+
+      // Фильтр по разделам
+      document.getElementById("filters").addEventListener("click", (e) => {
+        if (!e.target.dataset.cat) return;
+        document
+          .querySelectorAll(".chip")
+          .forEach((c) => c.classList.remove("active"));
+        e.target.classList.add("active");
+        render(e.target.dataset.cat);
+      });
+
+      // Выбор размера и добавление в корзину
+      const cart = [];
+      grid.addEventListener("click", (e) => {
+        const card = e.target.closest(".card");
+        if (!card) return;
+        if (e.target.classList.contains("size")) {
+          card
+            .querySelectorAll(".size")
+            .forEach((s) => s.classList.remove("picked"));
+          e.target.classList.add("picked");
+        }
+        if (e.target.classList.contains("add")) {
+          const picked = card.querySelector(".size.picked");
+          if (!picked) return toast("Сначала выберите размер");
+          const p = products.find((x) => x.id == card.dataset.id);
+          cart.push({ ...p, size: picked.textContent });
+          updateCart();
+          toast("Добавили в корзину");
+        }
+      });
+
+      // Корзина
+      const body = document.body;
+      function updateCart() {
+        document.getElementById("cartCount").textContent = cart.length;
+        document.getElementById("cartItems").innerHTML = cart.length
+          ? cart
+              .map(
+                (p, i) => `
+        <div class="cart-item">
+          <img src="${p.photo}" alt="">
+          <div>
+            <div>${p.name}</div>
+            <div>Размер ${p.size} · <b>${rub(p.price)}</b></div>
+            <button data-remove="${i}">Удалить</button>
+          </div>
+        </div>`,
+              )
+              .join("")
+          : `<p class="empty">Пока здесь пусто. Выберите вещи в каталоге.</p>`;
+        document.getElementById("cartTotal").textContent = rub(
+          cart.reduce((s, p) => s + p.price, 0),
+        );
+      }
+      updateCart();
+      document.getElementById("cartItems").addEventListener("click", (e) => {
+        if (e.target.dataset.remove === undefined) return;
+        cart.splice(e.target.dataset.remove, 1);
+        updateCart();
+      });
+      document.getElementById("openCart").onclick = () =>
+        body.classList.add("cart-open");
+      document.getElementById("closeCart").onclick = () =>
+        body.classList.remove("cart-open");
+      document.getElementById("overlay").onclick = () =>
+        body.classList.remove("cart-open");
+      document.getElementById("checkout").onclick = () => {
+        if (!cart.length) return toast("Добавьте хотя бы одну вещь");
+        if (cart.length > 5) return toast("На примерку можно взять до 5 вещей");
+        toast("Демо-версия: заказ не отправляется");
+      };
+
+      // Заявка к стилисту (демо)
+      document.getElementById("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("formFields").style.display = "none";
+        document.getElementById("done").style.display = "block";
+      });
+
+      // Короткое всплывающее сообщение
+      let timer;
+      function toast(text) {
+        const t = document.getElementById("toast");
+        t.textContent = text;
+        t.classList.add("show");
+        clearTimeout(timer);
+        timer = setTimeout(() => t.classList.remove("show"), 2200);
+      }
+
+      // Меню на телефоне: открыть, закрыть, закрыть после выбора раздела
+      const header = document.querySelector("header");
+      const menuBtn = document.getElementById("menuBtn");
+      function setMenu(open) {
+        header.classList.toggle("nav-open", open);
+        menuBtn.setAttribute("aria-expanded", open);
+        menuBtn.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+      }
+      menuBtn.onclick = () =>
+        setMenu(!header.classList.contains("nav-open"));
+      document
+        .querySelectorAll("nav a")
+        .forEach((a) => (a.onclick = () => setMenu(false)));
+    </script>
+  </body>
+</html>
