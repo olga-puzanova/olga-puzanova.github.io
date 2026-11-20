@@ -44,12 +44,13 @@ figcaption input { font-variant-numeric: tabular-nums; }
 .showroom-hero h1{font-size:clamp(2.6rem,4.5vw,4.65rem);letter-spacing:-.06em;line-height:1.11}
 .showroom-hero .hero-image{min-height:450px;height:100%;border-radius:0;background-position:center}
 .showroom-hero .intro{font-size:1rem;margin-block:1.15rem 1.5rem}
-.showroom-perks{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:18px 15px;background:#fffaf4;border:1px solid var(--line);border-radius:12px;margin-top:-23px;box-shadow:0 6px 21px #38271e11}
-.showroom-perks.wrap{width:min(1030px,calc(100% - 104px))}
-.showroom-perks div{text-align:center;padding:0 9px}
-.showroom-perks div+div{border-left:1px solid var(--line)}
-.showroom-perks strong,.showroom-perks span{display:block}
-.showroom-perks span{color:var(--sub);font-size:.82rem}
+.showroom-perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));list-style:none;padding:0;margin:16px auto 0;background:#fffaf4;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.showroom-perks li{display:flex;align-items:center;gap:16px;padding:13px clamp(12px,2.5vw,30px)}
+.showroom-perks li+li{border-left:1px solid var(--line)}
+.showroom-perks strong,.perk-copy>span{display:block}
+.perk-copy>span{color:var(--sub);font-size:.9rem;line-height:1.35;margin-top:3px}
+.perk-icon{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:10px;background:#f0e5d9;color:#76533f}
+.perk-icon svg{width:26px;height:26px}
 .showroom .section{padding-block:54px}
 .showroom-categories.section{padding-bottom:10px}
 .showroom-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
@@ -69,9 +70,9 @@ figcaption input { font-variant-numeric: tabular-nums; }
 .invitation-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
 .showroom .showcase,.showroom .brief{background:#f0e5d9}
 .showroom .material-band,.showroom .review-band{background:#f6eee5}
-@media(max-width:900px){.showroom-hero .hero-image{min-height:350px}.showroom .wrap{width:calc(100% - 48px)}.showroom-perks.wrap{width:calc(100% - 70px)}}
-@media(max-width:760px){.showroom .wrap{width:calc(100% - 32px)}.showroom-hero,.showroom-invitation{grid-template-columns:1fr}.showroom-hero .hero-image{min-height:0;aspect-ratio:1.7}.showroom-hero .hero-copy{padding:24px}.hero-break{display:none}.showroom-perks.wrap{width:calc(100% - 44px);margin-top:12px}.showroom-category-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.showroom .section{padding-block:38px}.showroom-categories.section{padding-bottom:5px}}
-@media(max-width:420px){.showroom-perks{grid-template-columns:1fr;gap:8px}.showroom-perks div+div{border-left:0;border-top:1px solid var(--line);padding-top:8px}.showroom-hero h1{font-size:2.25rem}.showroom-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.showroom-hero .hero-image{min-height:350px}.showroom .wrap{width:calc(100% - 48px)}}
+@media(max-width:760px){.showroom .wrap{width:calc(100% - 32px)}.showroom-hero,.showroom-invitation{grid-template-columns:1fr}.showroom-hero .hero-image{min-height:0;aspect-ratio:1.7}.showroom-hero .hero-copy{padding:24px}.hero-break{display:none}.showroom-category-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.showroom .section{padding-block:38px}.showroom-categories.section{padding-bottom:5px}}
+@media(max-width:420px){.showroom-perks{grid-template-columns:1fr;margin-top:12px}.showroom-perks li{gap:12px}.showroom-perks li+li{border-left:0;border-top:1px solid var(--line)}.showroom-hero h1{font-size:2.25rem}.showroom-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .showroom .review-note{color:var(--sub);margin-bottom:1.3rem}
 .showroom .review-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .showroom .review-card{display:grid;grid-template-columns:minmax(105px,.72fr) minmax(0,1fr);overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fffbf6;padding:0}
@@ -84,17 +85,254 @@ figcaption input { font-variant-numeric: tabular-nums; }
 .showroom .tag{color:#30241d}
 @media(max-width:900px){.showroom .review-card{grid-template-columns:minmax(0,1fr)}.review-card img{height:auto;min-height:0;aspect-ratio:1.7}}
 @media(max-width:600px){.showroom .review-grid{grid-template-columns:minmax(0,1fr)}}
-</style></head>
+</style><link rel="icon" type="image/png" href="./tihaya-forma-logo.png"><link rel="stylesheet" href="./catalog.css"><link rel="stylesheet" href="./order-ui.css"><link rel="stylesheet" href="./showroom-finish.css"></head>
 <body class="showroom">
-<header class="wrap top"><a href="#" class="brand">тихая<span>форма</span><small>МЕБЕЛЬНАЯ МАСТЕРСКАЯ</small></a><nav aria-label="Основное меню"><a href="#services">Категории</a><a href="#projects">Каталог</a><a href="#materials">Материалы</a><a href="#works">До и после</a><a href="#reviews">Отзывы</a></nav><a class="btn outline" href="#brief">Обсудить задачу</a></header>
+<header class="wrap top"><a href="#" class="brand" aria-label="Тихая форма. На главную"><img src="./tihaya-forma-logo.png" alt="" width="44" height="44"><div>тихая<span>форма</span><small>МЕБЕЛЬНАЯ МАСТЕРСКАЯ</small></div></a><nav aria-label="Основное меню"><a href="#services">Категории</a><a href="#projects">Каталог</a><a href="#materials">Материалы</a><a href="#works">До и после</a><a href="#reviews">Отзывы</a><a href="#questions">Вопросы</a><a href="#contacts">Контакты</a></nav><a class="btn outline" href="#brief">Обсудить задачу</a></header>
 <main>
-<section class="hero wrap showroom-hero"><div class="hero-copy"><p class="eyebrow"><i></i> Мебельная мастерская · Москва</p><h1>Мебель, с которой<br class="hero-break"> уютнее дома</h1><p class="intro">Изготовим мебель по вашим размерам или обновим ту, что уже стала любимой.</p><div class="actions"><a class="btn primary" href="#projects">Смотреть каталог</a><a class="btn outline" href="#works">До и после</a></div></div><div class="hero-image photo sofa" role="img" aria-label="Гостиная с кремовым диваном"></div></section>
-<div class="wrap showroom-perks" aria-label="Услуги мастерской"><div><strong>По вашим размерам</strong><span>Под комнату и планировку</span></div><div><strong>Подбор материалов</strong><span>Фасады, ткани и оттенки</span></div><div><strong>Ремонт по фото</strong><span>Начнём с предварительной оценки</span></div></div><section class="wrap showroom-categories section" id="services"><div class="showroom-heading"><h2>Выберите категорию</h2><a href="#projects">Весь каталог</a></div><div class="showroom-category-grid"><a href="#project-kitchen"><img src="./photo-1.jpg" alt="" loading="lazy"><span>Кухни</span></a><a href="#project-sofa"><img src="./photo-2.jpg" alt="" loading="lazy"><span>Диваны</span></a><a href="#project-chair"><img src="./photo-5.jpg" alt="" loading="lazy"><span>Стулья</span></a><a href="#project-table"><img src="./photo-6.jpg" alt="" loading="lazy"><span>Столы</span></a><a href="#works"><img src="./photo-4.jpg" alt="" loading="lazy"><span>Реставрация</span></a></div></section>
-<section class="wrap section" id="projects"><div class="section-title"><p class="eyebrow"><i></i> Изготовление на заказ</p><h2>Коллекция мастерской</h2><p class="muted">Примеры изделий · визуализации для концепта</p></div><div class="cards project-cards"><article id="project-kitchen"><img src="./photo-1.jpg" alt="Кухни на заказ" loading="lazy"><div class="card-body"><h3>Кухни</h3><p>Шалфейные фасады, светлый дуб и остров с округлым краем.</p><a href="#brief" data-choice="new" data-item="Кухня">Настроить заказ</a></div></article><article id="project-sofa"><img src="./photo-2.jpg" alt="Диваны на заказ" loading="lazy"><div class="card-body"><h3>Диваны</h3><p>Кремовое букле, глубокая посадка и мягкая линия спинки.</p><a href="#brief" data-choice="new" data-item="Диван">Настроить заказ</a></div></article><article id="project-chair"><img src="./photo-5.jpg" alt="Стулья на заказ" loading="lazy"><div class="card-body"><h3>Стулья</h3><p>Каркас из ясеня и светлое мягкое сиденье.</p><a href="#brief" data-choice="new" data-item="Стул">Настроить заказ</a></div></article><article id="project-table"><img src="./photo-6.jpg" alt="Столы на заказ" loading="lazy"><div class="card-body"><h3>Столы</h3><p>Овальная столешница под светлый дуб и скруглённая кромка.</p><a href="#brief" data-choice="new" data-item="Стол">Настроить заказ</a></div></article></div></section><section class="wrap showroom-invitation"><div><p class="eyebrow"><i></i> Реставрация мебели</p><h2>Новая жизнь любимых вещей</h2><p>Обновим обивку, фасады или столешницу. Покажите, что хочется изменить.</p><a class="btn primary" href="#brief" data-choice="repair">Оценить по фото</a></div><div class="invitation-image"><img src="./photo-4.jpg" alt="Кресло после перетяжки" loading="lazy"></div></section><section class="material-band" id="materials"><div class="wrap section"><div class="section-title"><p class="eyebrow"><i></i> Материалы и отделка</p><h2>Выберите фактуру и оттенок</h2><p>Дуб, ясень и орех можно рассмотреть в массиве или шпоне. Под дерево также подбирают декоры ЛДСП. Образцы на экране помогают выбрать направление, а точный оттенок и фактуру согласуют по физическому образцу.</p></div><div class="material-group"><h3>Дерево и декоры</h3><div class="samples"><div><span class="swatch wood swatch-0" style="--sample:#b69870" aria-hidden="true"></span><strong>Дуб</strong><small>Заметный древесный рисунок</small></div><div><span class="swatch wood swatch-1" style="--sample:#d1b890" aria-hidden="true"></span><strong>Ясень</strong><small>Светлый тон и выразительные волокна</small></div><div><span class="swatch wood swatch-2" style="--sample:#795741" aria-hidden="true"></span><strong>Орех</strong><small>Тёплый тёмный тон</small></div></div></div><div class="material-group"><h3>Обивочные ткани</h3><div class="samples"><div><span class="swatch fabric swatch-0" style="--sample:#8e6c7e" aria-hidden="true"></span><strong>Бархат</strong><small>Выразительный блеск ворса</small></div><div><span class="swatch fabric swatch-1" style="--sample:#70816c" aria-hidden="true"></span><strong>Велюр</strong><small>Мягкий ворс, оттенок меняется на свету</small></div><div><span class="swatch fabric swatch-2" style="--sample:#aaa08a" aria-hidden="true"></span><strong>Рогожка</strong><small>Заметное переплетение нитей</small></div><div><span class="swatch fabric swatch-3" style="--sample:#ddd1bc" aria-hidden="true"></span><strong>Букле</strong><small>Рельефные петли</small></div><div><span class="swatch fabric swatch-4" style="--sample:#917568" aria-hidden="true"></span><strong>Шенилл</strong><small>Мягкая фактурная пряжа</small></div></div></div><div class="material-group"><h3>Фасады и столешницы</h3><div class="samples"><div><span class="swatch surface swatch-0" style="--sample:#a1a894" aria-hidden="true"></span><strong>Матовая эмаль</strong><small>МДФ с окрашенной поверхностью</small></div><div><span class="swatch surface swatch-1" style="--sample:#baa7a0" aria-hidden="true"></span><strong>Глянцевое покрытие</strong><small>Гладкая поверхность с отражением</small></div><div><span class="swatch surface swatch-2" style="--sample:#d4c5ad" aria-hidden="true"></span><strong>Ламинат HPL</strong><small>Декоративное покрытие столешницы</small></div><div><span class="swatch surface swatch-3" style="--sample:#d0c9c0" aria-hidden="true"></span><strong>Кварцевый агломерат</strong><small>Каменная фактура</small></div></div></div><details><summary>Чем отличаются массив, шпон, МДФ и ЛДСП?</summary><p><strong>Массив</strong> — натуральная древесина по всей толщине детали. <strong>Шпон</strong> — тонкий слой натуральной древесины на основе, например на МДФ. <strong>МДФ</strong> — плита из спрессованных древесных волокон. <strong>ЛДСП</strong> — ламинированная древесно-стружечная плита. Для кухни отдельно выбирают корпус, фасады, покрытие и столешницу.</p></details></div></section><section class="showcase" id="works"><div class="wrap section"><div class="section-title"><p class="eyebrow"><i></i> Ремонт и обновление</p><h2>До и после</h2><p>Передвиньте ползунок, чтобы сравнить детали. Все примеры — визуализации.</p></div><div class="restoration-grid"><figure class="restoration"><div class="comparison"><img class="before" src="./photo-3.jpg" alt="Кресло до обновления" loading="lazy"><img class="after" src="./photo-4.jpg" alt="Кресло после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-0">Сравнить</label><input id="compare-0" aria-label="Кресло: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Кресло</h3><p>Новая шалфейная обивка и обновление деревянного каркаса.</p></figure><figure class="restoration"><div class="comparison"><img class="before" src="./photo-7.jpg" alt="Мягкое основание кровати до обновления" loading="lazy"><img class="after" src="./photo-8.jpg" alt="Мягкое основание кровати после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-1">Сравнить</label><input id="compare-1" aria-label="Мягкое основание кровати: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Мягкое основание кровати</h3><p>Замена ткани на царгах и изножье. Изголовье подобрано в тон.</p></figure><figure class="restoration"><div class="comparison"><img class="before" src="./photo-9.jpg" alt="Диван до обновления" loading="lazy"><img class="after" src="./photo-10.jpg" alt="Диван после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-2">Сравнить</label><input id="compare-2" aria-label="Диван: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Диван</h3><p>Замена обивки и восстановление формы подушек сиденья.</p></figure><figure class="restoration"><div class="comparison"><img class="before" src="./photo-11.jpg" alt="Кухня до обновления" loading="lazy"><img class="after" src="./photo-12.jpg" alt="Кухня после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-3">Сравнить</label><input id="compare-3" aria-label="Кухня: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Кухня</h3><p>Замена фасадов и столешницы с сохранением планировки.</p></figure></div></div></section>
+<section class="hero wrap showroom-hero" id="about"><div class="hero-copy"><p class="eyebrow"><i></i> Мебельная мастерская · Москва</p><h1>Мебель, с которой<br class="hero-break"> уютнее дома</h1><p class="intro">Изготовим мебель по вашим размерам или обновим ту, что уже стала любимой.</p><div class="actions"><a class="btn primary" href="#projects">Смотреть каталог</a><a class="btn outline" href="#works">До и после</a></div></div><div class="hero-image photo sofa" role="img" aria-label="Гостиная с кремовым диваном"></div></section>
+<ul class="wrap showroom-perks" aria-label="Условия заказа мебели">
+  <li>
+    <span class="perk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 6v5m5-5v3m5-3v5"/></svg></span>
+    <div class="perk-copy"><strong>Бесплатный замер</strong><span>Снимем размеры перед изготовлением мебели</span></div>
+  </li>
+  <li>
+    <span class="perk-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.2 2.7 7.8 7 10 4.3-2.2 7-5.8 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+    <div class="perk-copy"><strong>Гарантия 12 месяцев</strong><span>На мебель нашего производства</span></div>
+  </li>
+</ul>
+<section class="wrap showroom-categories section" id="services"><div class="showroom-heading"><h2>Выберите категорию</h2><a href="#projects">Весь каталог</a></div><div class="showroom-category-grid"><a href="#project-kitchen"><img src="./photo-1.jpg" alt="" loading="lazy"><span>Кухни</span></a><a href="#project-sofa"><img src="./photo-2.jpg" alt="" loading="lazy"><span>Диваны</span></a><a href="#project-chair"><img src="./photo-5.jpg" alt="" loading="lazy"><span>Стулья</span></a><a href="#project-table"><img src="./photo-6.jpg" alt="" loading="lazy"><span>Столы</span></a><a href="#project-restoration"><img src="./photo-4.jpg" alt="" loading="lazy"><span>Реставрация</span></a></div></section>
+<section class="wrap section" id="projects"><div class="section-title"><p class="eyebrow"><i></i> Изготовление на заказ</p><h2>Коллекция мастерской</h2><p class="muted">Примеры изделий · визуализации для концепта</p></div><div class="cards project-cards"><article id="project-kitchen"><div class="catalog-gallery" role="group" aria-label="Кухни. Примеры">
+  <div class="catalog-gallery-track" id="gallery-kitchen" tabindex="0" aria-label="Фотографии можно листать стрелками">
+    <figure><img src="./photo-1.jpg" alt="Шалфейная кухня с островом" loading="lazy" decoding="async"><figcaption><span id="reference-kitchen-1">Шалфейная кухня с островом</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-kitchen-1"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./kitchen-charcoal.webp" alt="П-образная кухня с тёмными фасадами" loading="lazy" decoding="async"><figcaption><span id="reference-kitchen-2">П-образная кухня с тёмными фасадами</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-kitchen-2"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./kitchen-ivory.webp" alt="Прямая кухня в оттенке слоновой кости" loading="lazy" decoding="async"><figcaption><span id="reference-kitchen-3">Прямая кухня в оттенке слоновой кости</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-kitchen-3"><span>Нравится этот вариант</span></label></figcaption></figure>
+  </div>
+  <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий пример" aria-controls="gallery-kitchen" hidden></button>
+  <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий пример" aria-controls="gallery-kitchen" hidden></button>
+  <div class="catalog-gallery-dots" hidden>
+    <button type="button" aria-label="Пример 1. Шалфейная кухня с островом" aria-controls="gallery-kitchen"></button>
+    <button type="button" aria-label="Пример 2. П-образная кухня с тёмными фасадами" aria-controls="gallery-kitchen"></button>
+    <button type="button" aria-label="Пример 3. Прямая кухня в оттенке слоновой кости" aria-controls="gallery-kitchen"></button>
+  </div>
+</div><div class="card-body"><h3>Кухни</h3><p>Прямые, П-образные и островные планировки.</p><a href="#brief" data-choice="new" data-item="Кухня">Настроить заказ</a></div></article><article id="project-sofa"><div class="catalog-gallery" role="group" aria-label="Диваны. Примеры">
+  <div class="catalog-gallery-track" id="gallery-sofa" tabindex="0" aria-label="Фотографии можно листать стрелками">
+    <figure><img src="./photo-2.jpg" alt="Кремовый диван в букле" loading="lazy" decoding="async"><figcaption><span id="reference-sofa-1">Кремовый диван в букле</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-sofa-1"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./sofa-olive.webp" alt="Оливковый модульный диван с оттоманкой" loading="lazy" decoding="async"><figcaption><span id="reference-sofa-2">Оливковый модульный диван с оттоманкой</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-sofa-2"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./sofa-terracotta.webp" alt="Терракотовый двухместный диван" loading="lazy" decoding="async"><figcaption><span id="reference-sofa-3">Терракотовый двухместный диван</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-sofa-3"><span>Нравится этот вариант</span></label></figcaption></figure>
+  </div>
+  <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий пример" aria-controls="gallery-sofa" hidden></button>
+  <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий пример" aria-controls="gallery-sofa" hidden></button>
+  <div class="catalog-gallery-dots" hidden>
+    <button type="button" aria-label="Пример 1. Кремовый диван в букле" aria-controls="gallery-sofa"></button>
+    <button type="button" aria-label="Пример 2. Оливковый модульный диван с оттоманкой" aria-controls="gallery-sofa"></button>
+    <button type="button" aria-label="Пример 3. Терракотовый двухместный диван" aria-controls="gallery-sofa"></button>
+  </div>
+</div><div class="card-body"><h3>Диваны</h3><p>Компактные, угловые и модульные модели.</p><a href="#brief" data-choice="new" data-item="Диван">Настроить заказ</a></div></article><article id="project-chair"><div class="catalog-gallery" role="group" aria-label="Стулья. Примеры">
+  <div class="catalog-gallery-track" id="gallery-chair" tabindex="0" aria-label="Фотографии можно листать стрелками">
+    <figure><img src="./photo-5.jpg" alt="Стул со светлым мягким сиденьем" loading="lazy" decoding="async"><figcaption><span id="reference-chair-1">Стул со светлым мягким сиденьем</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-chair-1"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./chair-ash.webp" alt="Стул из ясеня с плетёным сиденьем" loading="lazy" decoding="async"><figcaption><span id="reference-chair-2">Стул из ясеня с плетёным сиденьем</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-chair-2"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./chair-walnut.webp" alt="Ореховый стул с зелёной обивкой" loading="lazy" decoding="async"><figcaption><span id="reference-chair-3">Ореховый стул с зелёной обивкой</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-chair-3"><span>Нравится этот вариант</span></label></figcaption></figure>
+  </div>
+  <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий пример" aria-controls="gallery-chair" hidden></button>
+  <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий пример" aria-controls="gallery-chair" hidden></button>
+  <div class="catalog-gallery-dots" hidden>
+    <button type="button" aria-label="Пример 1. Стул со светлым мягким сиденьем" aria-controls="gallery-chair"></button>
+    <button type="button" aria-label="Пример 2. Стул из ясеня с плетёным сиденьем" aria-controls="gallery-chair"></button>
+    <button type="button" aria-label="Пример 3. Ореховый стул с зелёной обивкой" aria-controls="gallery-chair"></button>
+  </div>
+</div><div class="card-body"><h3>Стулья</h3><p>Деревянные стулья с мягкими и плетёными сиденьями.</p><a href="#brief" data-choice="new" data-item="Стул">Настроить заказ</a></div></article><article id="project-table"><div class="catalog-gallery" role="group" aria-label="Столы. Примеры">
+  <div class="catalog-gallery-track" id="gallery-table" tabindex="0" aria-label="Фотографии можно листать стрелками">
+    <figure><img src="./photo-6.jpg" alt="Овальный стол в светлом дубе" loading="lazy" decoding="async"><figcaption><span id="reference-table-1">Овальный стол в светлом дубе</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-table-1"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./table-round.webp" alt="Круглый стол с рифлёной опорой" loading="lazy" decoding="async"><figcaption><span id="reference-table-2">Круглый стол с рифлёной опорой</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-table-2"><span>Нравится этот вариант</span></label></figcaption></figure>
+    <figure><img src="./table-walnut.webp" alt="Прямоугольный стол из ореха" loading="lazy" decoding="async"><figcaption><span id="reference-table-3">Прямоугольный стол из ореха</span><label class="catalog-reference-choice"><input type="checkbox" aria-describedby="reference-table-3"><span>Нравится этот вариант</span></label></figcaption></figure>
+  </div>
+  <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий пример" aria-controls="gallery-table" hidden></button>
+  <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий пример" aria-controls="gallery-table" hidden></button>
+  <div class="catalog-gallery-dots" hidden>
+    <button type="button" aria-label="Пример 1. Овальный стол в светлом дубе" aria-controls="gallery-table"></button>
+    <button type="button" aria-label="Пример 2. Круглый стол с рифлёной опорой" aria-controls="gallery-table"></button>
+    <button type="button" aria-label="Пример 3. Прямоугольный стол из ореха" aria-controls="gallery-table"></button>
+  </div>
+</div><div class="card-body"><h3>Столы</h3><p>Круглые, овальные и прямоугольные столы.</p><a href="#brief" data-choice="new" data-item="Стол">Настроить заказ</a></div></article><article id="project-restoration"><div class="catalog-gallery" role="group" aria-label="Реставрация. Примеры">
+  <div class="catalog-gallery-track" id="gallery-restoration" tabindex="0" aria-label="Фотографии можно листать стрелками">
+    <figure><img src="./photo-4.jpg" alt="Кресло после перетяжки" loading="lazy" decoding="async"><figcaption>Кресло после перетяжки</figcaption></figure>
+    <figure><img src="./photo-8.jpg" alt="Кровать после замены обивки" loading="lazy" decoding="async"><figcaption>Кровать после замены обивки</figcaption></figure>
+    <figure><img src="./photo-10.jpg" alt="Диван с обновлёнными подушками" loading="lazy" decoding="async"><figcaption>Диван с обновлёнными подушками</figcaption></figure>
+    <figure><img src="./photo-12.jpg" alt="Кухня после замены фасадов" loading="lazy" decoding="async"><figcaption>Кухня после замены фасадов</figcaption></figure>
+  </div>
+  <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий пример" aria-controls="gallery-restoration" hidden></button>
+  <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий пример" aria-controls="gallery-restoration" hidden></button>
+  <div class="catalog-gallery-dots" hidden>
+    <button type="button" aria-label="Пример 1. Кресло после перетяжки" aria-controls="gallery-restoration"></button>
+    <button type="button" aria-label="Пример 2. Кровать после замены обивки" aria-controls="gallery-restoration"></button>
+    <button type="button" aria-label="Пример 3. Диван с обновлёнными подушками" aria-controls="gallery-restoration"></button>
+    <button type="button" aria-label="Пример 4. Кухня после замены фасадов" aria-controls="gallery-restoration"></button>
+  </div>
+</div><div class="card-body"><h3>Реставрация</h3><p>Перетяжка, ремонт каркаса и обновление фасадов.</p><a href="#works">Сравнить до и после</a></div></article></div></section><section class="wrap showroom-invitation"><div><p class="eyebrow"><i></i> Реставрация мебели</p><h2>Новая жизнь любимых вещей</h2><p>Обновим обивку, фасады или столешницу. Покажите, что хочется изменить.</p><a class="btn primary" href="#brief" data-choice="repair">Оценить по фото</a></div><div class="invitation-image"><img src="./photo-4.jpg" alt="Кресло после перетяжки" loading="lazy"></div></section><section class="material-band" id="materials"><div class="wrap section"><div class="section-title"><p class="eyebrow"><i></i> Материалы и отделка</p><h2>Выберите фактуру и оттенок</h2><p>Дуб, ясень и орех можно рассмотреть в массиве или шпоне. Под дерево также подбирают декоры ЛДСП. Образцы на экране помогают выбрать направление, а точный оттенок и фактуру согласуют по физическому образцу.</p></div><div class="material-group"><h3>Дерево и декоры</h3><div class="samples"><div><span class="swatch wood swatch-0" style="--sample:#b69870" aria-hidden="true"></span><strong>Дуб</strong><small>Заметный древесный рисунок</small></div><div><span class="swatch wood swatch-1" style="--sample:#d1b890" aria-hidden="true"></span><strong>Ясень</strong><small>Светлый тон и выразительные волокна</small></div><div><span class="swatch wood swatch-2" style="--sample:#795741" aria-hidden="true"></span><strong>Орех</strong><small>Тёплый тёмный тон</small></div></div></div><div class="material-group"><h3>Обивочные ткани</h3><div class="samples"><div><span class="swatch fabric swatch-0" style="--sample:#8e6c7e" aria-hidden="true"></span><strong>Бархат</strong><small>Выразительный блеск ворса</small></div><div><span class="swatch fabric swatch-1" style="--sample:#70816c" aria-hidden="true"></span><strong>Велюр</strong><small>Мягкий ворс, оттенок меняется на свету</small></div><div><span class="swatch fabric swatch-2" style="--sample:#aaa08a" aria-hidden="true"></span><strong>Рогожка</strong><small>Заметное переплетение нитей</small></div><div><span class="swatch fabric swatch-3" style="--sample:#ddd1bc" aria-hidden="true"></span><strong>Букле</strong><small>Рельефные петли</small></div><div><span class="swatch fabric swatch-4" style="--sample:#917568" aria-hidden="true"></span><strong>Шенилл</strong><small>Мягкая фактурная пряжа</small></div></div></div><div class="material-group"><h3>Фасады и столешницы</h3><div class="samples"><div><span class="swatch surface swatch-0" style="--sample:#a1a894" aria-hidden="true"></span><strong>Матовая эмаль</strong><small>МДФ с окрашенной поверхностью</small></div><div><span class="swatch surface swatch-1" style="--sample:#baa7a0" aria-hidden="true"></span><strong>Глянцевое покрытие</strong><small>Гладкая поверхность с отражением</small></div><div><span class="swatch surface swatch-2" style="--sample:#d4c5ad" aria-hidden="true"></span><strong>Ламинат HPL</strong><small>Декоративное покрытие столешницы</small></div><div><span class="swatch surface swatch-3" style="--sample:#d0c9c0" aria-hidden="true"></span><strong>Кварцевый агломерат</strong><small>Каменная фактура</small></div></div></div><details><summary>Чем отличаются массив, шпон, МДФ и ЛДСП?</summary><p><strong>Массив</strong> — натуральная древесина по всей толщине детали. <strong>Шпон</strong> — тонкий слой натуральной древесины на основе, например на МДФ. <strong>МДФ</strong> — плита из спрессованных древесных волокон. <strong>ЛДСП</strong> — ламинированная древесно-стружечная плита. Для кухни отдельно выбирают корпус, фасады, покрытие и столешницу.</p></details></div></section><section class="showcase" id="works"><div class="wrap section"><div class="section-title"><p class="eyebrow"><i></i> Ремонт и обновление</p><h2>До и после</h2><p>Передвиньте ползунок, чтобы сравнить детали. Все примеры — визуализации.</p></div><div class="restoration-grid"><figure class="restoration"><div class="comparison"><img class="before" src="./photo-3.jpg" alt="Кресло до обновления" loading="lazy"><img class="after" src="./photo-4.jpg" alt="Кресло после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-0">Сравнить</label><input id="compare-0" aria-label="Кресло: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Кресло</h3><p>Новая шалфейная обивка и обновление деревянного каркаса.</p></figure><figure class="restoration"><div class="comparison"><img class="before" src="./photo-7.jpg" alt="Мягкое основание кровати до обновления" loading="lazy"><img class="after" src="./photo-8.jpg" alt="Мягкое основание кровати после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-1">Сравнить</label><input id="compare-1" aria-label="Мягкое основание кровати: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Мягкое основание кровати</h3><p>Замена ткани на царгах и изножье. Изголовье подобрано в тон.</p></figure><figure class="restoration"><div class="comparison"><img class="before" src="./photo-9.jpg" alt="Диван до обновления" loading="lazy"><img class="after" src="./photo-10.jpg" alt="Диван после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-2">Сравнить</label><input id="compare-2" aria-label="Диван: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Диван</h3><p>Замена обивки и восстановление формы подушек сиденья.</p></figure><figure class="restoration"><div class="comparison"><img class="before" src="./photo-11.jpg" alt="Кухня до обновления" loading="lazy"><img class="after" src="./photo-12.jpg" alt="Кухня после обновления" loading="lazy"><span class="divider" aria-hidden="true"><b>‹ ›</b></span><span class="tag first">До</span><span class="tag last">После</span></div><figcaption><label for="compare-3">Сравнить</label><input id="compare-3" aria-label="Кухня: сравнить до и после" type="range" min="0" max="100" value="50"></figcaption><h3>Кухня</h3><p>Замена фасадов и столешницы с сохранением планировки.</p></figure></div></div></section>
 <section class="wrap section process" id="process"><div class="section-title"><p class="eyebrow"><i></i> Как работаем</p><h2>От идеи до готовой мебели</h2></div><div class="steps"><article><h3>Обсуждаем задачу</h3><p>Для новой мебели пригодятся примерные размеры и референс. Для ремонта — фото мебели целиком и крупный план повреждения.</p></article><article><h3>Согласовываем детали</h3><p>Подбираем материалы, уточняем объём работ, стоимость и сроки. Для новой мебели согласовываем замеры и проект.</p></article><article><h3>Изготавливаем или обновляем</h3><p>Проверяем результат перед выдачей. Доставку и монтаж обсуждаем заранее.</p></article></div></section>
-<section class="wrap section faq"><div><p class="eyebrow"><i></i> Вопросы</p><h2>Перед заказом</h2></div><div><details><summary>Когда стоит обновить мебель?</summary><p>Если вам удобны размеры и посадка, а каркас ремонтопригоден, стоит сравнить смету ремонта со стоимостью новой мебели. По фото можно начать оценку, скрытые повреждения уточняются при осмотре.</p></details><details><summary>Из чего складывается стоимость?</summary><p>Для новой мебели важны размеры, материалы, фурнитура и монтаж. Для ремонта — состояние каркаса, выбранная ткань, наполнитель и объём работ.</p></details><details><summary>Что подготовить для первого разговора?</summary><p>Для кухни или шкафа — приблизительные размеры и план помещения, если он есть. Для дивана — размеры и пожелания по посадке. Для ремонта — общий снимок и фото проблемного места.</p></details></div></section>
-<section class="review-band" id="reviews" aria-labelledby="review-title"><div class="wrap section"><h2 id="review-title">Отзывы о работе</h2><p class="review-note">Примеры отзывов для демонстрации сайта. Изображения — визуализации.</p><div class="review-grid"><article class="review-card"><img src="./photo-1.jpg" alt="Кухня по размерам" loading="lazy"><div class="review-copy"><p class="review-type">Изготовление</p><h3>Кухня по размерам</h3><blockquote>«В маленькой кухне наконец стало удобно готовить. В ящиках хватает места для посуды, а шалфейные фасады хорошо смотрятся при дневном свете.»</blockquote></div></article><article class="review-card"><img src="./photo-2.jpg" alt="Диван для гостиной" loading="lazy"><div class="review-copy"><p class="review-type">Изготовление</p><h3>Диван для гостиной</h3><blockquote>«Нужен был диван, который поместится между стеной и окном. Получилась удобная посадка, а светлая ткань подошла к нашему интерьеру.»</blockquote></div></article><article class="review-card"><img src="./photo-4.jpg" alt="Перетяжка кресла" loading="lazy"><div class="review-copy"><p class="review-type">Обновление</p><h3>Перетяжка кресла</h3><blockquote>«Сохранили деревянный каркас и заменили обивку. Кресло осталось таким же удобным, а по цвету теперь подходит к гостиной.»</blockquote></div></article><article class="review-card"><img src="./photo-10.jpg" alt="Реставрация дивана" loading="lazy"><div class="review-copy"><p class="review-type">Обновление</p><h3>Реставрация дивана</h3><blockquote>«Заменили ткань и восстановили подушки сиденья. Диван снова держит форму, и его удобно использовать каждый день.»</blockquote></div></article></div></div></section><section class="brief" id="brief"><div class="wrap feature"><div><p class="eyebrow"><i></i> Первый шаг</p><h2>Расскажите, что задумали</h2><p>Соберите короткое описание задачи. Его можно скопировать и использовать при обращении в мастерскую.</p><p class="muted">Демонстрационный сайт. Данные остаются у вас.</p></div><form><label for="kind">Что нужно сделать?</label><select id="kind"><option value="new">Изготовить мебель</option><option value="repair">Обновить или отремонтировать мебель</option></select><label for="item">Какая мебель?</label><select id="item" required></select><fieldset id="options" hidden><legend>Параметры мебели</legend><div class="options-grid"></div></fieldset><label for="task">Размеры и пожелания</label><textarea id="task" required rows="3" maxlength="1000" placeholder="Опишите задачу в нескольких словах"></textarea><div id="photo-field" hidden><label for="photos">Фотографии для оценки</label><input id="photos" type="file" accept="image/*" multiple><small>Добавьте общий вид и фото повреждения. Файлы остаются на устройстве.</small></div><button class="btn primary" type="submit">Составить описание</button><div id="result" hidden><label for="summary">Описание для мастерской</label><textarea id="summary" readonly rows="5"></textarea><button class="btn outline" id="copy" type="button">Скопировать описание</button></div><p class="status" role="status"></p></form></div></section>
-</main><footer class="wrap"><a href="#" class="brand">тихая<span>форма</span></a><p>Концепт сайта для портфолио · Ольга Пузанова</p></footer>
+
+<section class="brief" id="brief"><div class="wrap feature"><div><p class="eyebrow"><i></i> Первый шаг</p><h2>Расскажите, что задумали</h2><p>Соберите короткое описание задачи. Его можно скопировать и использовать при обращении в мастерскую.</p><p class="muted">Демонстрационный сайт. Данные остаются у вас.</p></div><form id="order-form"><label for="kind">Что нужно сделать?</label><select id="kind"><option value="new">Изготовить мебель</option><option value="repair">Обновить или отремонтировать мебель</option></select><label for="item">Какая мебель?</label><select id="item" required></select>
+<div class="order-reference" id="order-reference" hidden>
+  <img alt="" width="76" height="65">
+  <div><span>Выбранный пример</span><strong></strong><button type="button">Убрать пример</button></div>
+</div><fieldset id="options" hidden><legend>Параметры мебели</legend><div class="options-grid"></div></fieldset><label for="task">Размеры и пожелания</label><textarea id="task" required rows="3" maxlength="1000" placeholder="Опишите задачу в нескольких словах"></textarea><div id="photo-field" hidden><label for="photos">Фотографии для оценки</label><input id="photos" type="file" accept="image/*" multiple><small>Добавьте общий вид и фото повреждения. Файлы остаются на устройстве.</small></div><button class="btn primary" type="submit">Составить описание</button><div id="result" hidden><label for="summary">Описание для мастерской</label><textarea id="summary" readonly rows="5"></textarea><button class="btn outline" id="copy" type="button">Скопировать описание</button></div><p class="status" role="status"></p></form></div></section>
+<section class="review-band" id="reviews" aria-labelledby="review-title">
+  <div class="wrap section">
+    <div class="reviews-header">
+      <h2 id="review-title">Отзывы о работе</h2>
+      <p class="review-note">Демонстрационные отзывы и визуализации</p>
+    </div>
+    <div class="review-grid">
+<article class="review-card review-carousel-card">
+  <img src="./photo-1.jpg" alt="" loading="lazy" decoding="async">
+  <div class="review-copy">
+    <h3 id="review-topic-kitchen">Кухня по размерам</h3>
+    <div class="catalog-gallery review-gallery" role="group" aria-labelledby="review-topic-kitchen">
+      <div class="catalog-gallery-track" id="review-kitchen-track" tabindex="0" aria-label="Отзывы можно листать стрелками">
+        <figure><blockquote>«В маленькой кухне наконец стало удобно готовить. В ящиках хватает места для посуды, а шалфейные фасады хорошо смотрятся при дневном свете.»</blockquote></figure>
+        <figure><blockquote>«Подогнали шкафы под нишу, и вдоль окна осталось достаточно света. Потратили время на образцы фасадов, теперь цвет точно тот, который хотели.»</blockquote></figure>
+        <figure><blockquote>«Наконец нашлось место для посуды и запасов. Больше всего выручают глубокие выдвижные ящики рядом с плитой.»</blockquote></figure>
+      </div>
+      <div class="review-controls">
+        <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий отзыв" aria-controls="review-kitchen-track" hidden></button>
+        <div class="catalog-gallery-dots" hidden>
+            <button type="button" aria-label="Отзыв 1" aria-controls="review-kitchen-track"></button>
+            <button type="button" aria-label="Отзыв 2" aria-controls="review-kitchen-track"></button>
+            <button type="button" aria-label="Отзыв 3" aria-controls="review-kitchen-track"></button>
+        </div>
+        <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий отзыв" aria-controls="review-kitchen-track" hidden></button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="review-card review-carousel-card">
+  <img src="./photo-2.jpg" alt="" loading="lazy" decoding="async">
+  <div class="review-copy">
+    <h3 id="review-topic-sofa">Диван для гостиной</h3>
+    <div class="catalog-gallery review-gallery" role="group" aria-labelledby="review-topic-sofa">
+      <div class="catalog-gallery-track" id="review-sofa-track" tabindex="0" aria-label="Отзывы можно листать стрелками">
+        <figure><blockquote>«Нужен был диван, который поместится между стеной и окном. Получилась удобная посадка, а светлая ткань подошла к нашему интерьеру.»</blockquote></figure>
+        <figure><blockquote>«Попросили сделать сиденье чуть глубже. Теперь на диване удобно и читать, и устраиваться всей семьёй перед телевизором.»</blockquote></figure>
+        <figure><blockquote>«Выбирали обивку по образцам, потому что на экране оттенок выглядел иначе. В гостиной ткань получилась именно такой тёплой, как хотелось.»</blockquote></figure>
+      </div>
+      <div class="review-controls">
+        <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий отзыв" aria-controls="review-sofa-track" hidden></button>
+        <div class="catalog-gallery-dots" hidden>
+            <button type="button" aria-label="Отзыв 1" aria-controls="review-sofa-track"></button>
+            <button type="button" aria-label="Отзыв 2" aria-controls="review-sofa-track"></button>
+            <button type="button" aria-label="Отзыв 3" aria-controls="review-sofa-track"></button>
+        </div>
+        <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий отзыв" aria-controls="review-sofa-track" hidden></button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="review-card review-carousel-card">
+  <img src="./photo-4.jpg" alt="" loading="lazy" decoding="async">
+  <div class="review-copy">
+    <h3 id="review-topic-chair">Перетяжка кресла</h3>
+    <div class="catalog-gallery review-gallery" role="group" aria-labelledby="review-topic-chair">
+      <div class="catalog-gallery-track" id="review-chair-track" tabindex="0" aria-label="Отзывы можно листать стрелками">
+        <figure><blockquote>«Сохранили деревянный каркас и заменили обивку. Кресло осталось таким же удобным, а по цвету теперь подходит к гостиной.»</blockquote></figure>
+        <figure><blockquote>«Каркас оставили родной. Новая ткань и аккуратный шов освежили кресло, но его знакомый силуэт сохранился.»</blockquote></figure>
+        <figure><blockquote>«Сначала отправили фото потёртого сиденья. Потом выбрали обивку по образцам и забрали кресло в новом цвете.»</blockquote></figure>
+      </div>
+      <div class="review-controls">
+        <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий отзыв" aria-controls="review-chair-track" hidden></button>
+        <div class="catalog-gallery-dots" hidden>
+            <button type="button" aria-label="Отзыв 1" aria-controls="review-chair-track"></button>
+            <button type="button" aria-label="Отзыв 2" aria-controls="review-chair-track"></button>
+            <button type="button" aria-label="Отзыв 3" aria-controls="review-chair-track"></button>
+        </div>
+        <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий отзыв" aria-controls="review-chair-track" hidden></button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="review-card review-carousel-card">
+  <img src="./photo-10.jpg" alt="" loading="lazy" decoding="async">
+  <div class="review-copy">
+    <h3 id="review-topic-restoration">Реставрация дивана</h3>
+    <div class="catalog-gallery review-gallery" role="group" aria-labelledby="review-topic-restoration">
+      <div class="catalog-gallery-track" id="review-restoration-track" tabindex="0" aria-label="Отзывы можно листать стрелками">
+        <figure><blockquote>«Заменили ткань и восстановили подушки сиденья. Диван снова держит форму, и его удобно использовать каждый день.»</blockquote></figure>
+        <figure><blockquote>«Диван подходил по размеру, поэтому решили оставить его. После замены наполнителя сиденье стало заметно ровнее.»</blockquote></figure>
+        <figure><blockquote>«Новая обивка подошла к шторам, а спинка и подлокотники сохранили привычную форму. Рады, что старый диван ещё послужит.»</blockquote></figure>
+      </div>
+      <div class="review-controls">
+        <button class="catalog-gallery-arrow previous" type="button" aria-label="Предыдущий отзыв" aria-controls="review-restoration-track" hidden></button>
+        <div class="catalog-gallery-dots" hidden>
+            <button type="button" aria-label="Отзыв 1" aria-controls="review-restoration-track"></button>
+            <button type="button" aria-label="Отзыв 2" aria-controls="review-restoration-track"></button>
+            <button type="button" aria-label="Отзыв 3" aria-controls="review-restoration-track"></button>
+        </div>
+        <button class="catalog-gallery-arrow next" type="button" aria-label="Следующий отзыв" aria-controls="review-restoration-track" hidden></button>
+      </div>
+    </div>
+  </div>
+</article>
+    </div>
+    <details class="ask-question leave-review">
+      <summary>Оставить отзыв</summary>
+      <form id="review-form">
+        <label for="review-text">Ваш отзыв</label>
+        <textarea id="review-text" rows="3" maxlength="1500" required></textarea>
+        <small>В демоверсии текст отзыва можно скопировать.</small>
+        <button class="btn primary" type="submit">Скопировать отзыв</button>
+        <p class="status" role="status"></p>
+      </form>
+    </details>
+  </div>
+</section><section class="wrap section faq order-faq" id="questions" aria-labelledby="questions-title">
+  <div><p class="eyebrow"><i></i> Частые вопросы</p><h2 id="questions-title">Перед заказом</h2></div>
+  <div>
+    <details><summary>Когда можно заказать бесплатный замер?</summary><p>Когда вы определились с видом мебели. Договоримся о выезде и снимем точные размеры перед изготовлением.</p></details>
+    <details><summary>От чего зависит стоимость мебели на заказ?</summary><p>На цену влияют размеры, материалы, фурнитура и объём работ. Для предварительной оценки достаточно примерных размеров и понравившегося варианта.</p></details>
+    <details><summary>Можно ли оценить реставрацию по фото?</summary><p>Да. Подготовьте общий снимок мебели и крупный план повреждения. Скрытые дефекты уточним при осмотре.</p></details>
+    <details class="ask-question" id="ask-question">
+      <summary>Задать вопрос</summary>
+      <form id="question-form">
+        <label for="question-text">Ваш вопрос</label>
+        <textarea id="question-text" rows="3" maxlength="1000" required></textarea>
+        <small>В демоверсии вопрос можно скопировать.</small>
+        <button class="btn primary" type="submit">Скопировать вопрос</button>
+        <p class="status" role="status"></p>
+      </form>
+    </details>
+  </div>
+</section>
+
+</main><footer class="showroom-footer">
+<section class="wrap section" id="contacts" aria-labelledby="contacts-title">
+  <h2 id="contacts-title">Контакты</h2>
+  <div class="contacts-grid">
+    <div class="contacts-details">
+      <dl>
+        <div><dt>Адрес</dt><dd>Москва, ул. Лесная, 5</dd></div>
+        <div><dt>Телефон</dt><dd>+7 (495) 000-00-00</dd></div>
+        <div><dt>Электронная почта</dt><dd>studio@example.com</dd></div>
+        <div><dt>Время работы</dt><dd>Пн–Сб, 10:00–19:00<br>Вс — выходной</dd></div>
+      </dl>
+      <small>Адрес и контактные данные приведены для демонстрации.</small>
+    </div>
+    <figure class="contacts-map">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=37.5805%2C55.775%2C37.5933%2C55.7806&amp;layer=mapnik&amp;marker=55.777783%2C37.586886" title="Карта OpenStreetMap. Москва, улица Лесная, 5" loading="lazy"></iframe>
+      <figcaption><a href="https://www.openstreetmap.org/?mlat=55.777783&amp;mlon=37.586886#map=17/55.777783/37.586886" target="_blank" rel="noopener noreferrer">Открыть адрес на карте</a></figcaption>
+    </figure>
+  </div>
+</section>
+<div class="wrap site-footer">
+  <a href="#" class="brand" aria-label="Тихая форма. На главную"><img src="./tihaya-forma-logo.png" alt="" width="44" height="44"><div>тихая<span>форма</span></div></a>
+  <nav aria-label="Нижнее меню">
+    <a href="#about">О компании</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#questions">Вопросы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="btn outline footer-question" href="#ask-question">Задать вопрос</a>
+  <p>Концепт сайта для портфолио · Ольга Пузанова</p>
+</div>
+</footer>
 <script>function keepShortWords(text) {
   return text.replace(
     /(?<![\p{L}\p{N}_-])(а|и|но|или|в|во|без|для|до|за|из|к|ко|между|на|над|о|об|обо|от|перед|по|под|при|про|с|со|у|через|не|ни)[ \t]+(?=[«„“"(]*[\p{L}\p{N}])/giu,
@@ -112,12 +350,12 @@ const item = document.querySelector('#item');
 const task = document.querySelector('#task');
 const photos = document.querySelector('#photos');
 const photoField = document.querySelector('#photo-field');
-const form = document.querySelector('form');
+const form = document.querySelector('#order-form');
 const options = document.querySelector('#options');
 const grid = options.querySelector('.options-grid');
 const result = document.querySelector('#result');
 const summary = document.querySelector('#summary');
-const statusMessage = document.querySelector('.status');
+const statusMessage = form.querySelector('.status');
 const items = ['Кухня', 'Шкаф', 'Диван', 'Кресло', 'Кровать', 'Стул', 'Стол', 'Другая мебель'];
 const fabrics = ['Бархат', 'Велюр', 'Рогожка', 'Букле', 'Шенилл'];
 const colors = ['Молочный', 'Песочный', 'Шалфейный', 'Припылённая роза', 'Терракотовый', 'Графитовый', 'Другой оттенок'];
@@ -154,6 +392,57 @@ const repair = {
 const aliases = {'Кухня или шкаф':'Кухня', 'Диван или мягкая мебель':'Диван'};
 item.add(new Option('Выберите мебель', ''));
 for (const name of items) item.add(new Option(name, name));
+const referencePreview = document.querySelector('#order-reference');
+const referenceImage = referencePreview.querySelector('img');
+const referenceTitle = referencePreview.querySelector('strong');
+const catalogChoices = new Map();
+
+function selectedReference() {
+  return kind.value === 'new' ? catalogChoices.get(item.value)?.find(checkbox => checkbox.checked) : undefined;
+}
+
+function syncReference() {
+  const selected = selectedReference();
+  referencePreview.hidden = !selected;
+  if (!selected) {
+    referenceImage.removeAttribute('src');
+    referenceTitle.textContent = '';
+    return;
+  }
+  const figure = selected.closest('figure');
+  referenceImage.src = figure.querySelector('img').src;
+  referenceTitle.textContent = document.getElementById(selected.getAttribute('aria-describedby')).textContent;
+}
+
+for (const article of document.querySelectorAll('.project-cards article')) {
+  const orderLink = article.querySelector('[data-choice="new"][data-item]');
+  if (!orderLink) continue;
+  const checkboxes = Array.from(article.querySelectorAll('.catalog-reference-choice input'));
+  catalogChoices.set(orderLink.dataset.item, checkboxes);
+  for (const checkbox of checkboxes) {
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        for (const other of checkboxes) {
+          if (other !== checkbox) other.checked = false;
+        }
+      }
+      if (item.value === orderLink.dataset.item && kind.value === 'new') {
+        syncReference();
+        clearResult();
+      }
+    });
+  }
+}
+
+referencePreview.querySelector('button').addEventListener('click', () => {
+  const selected = selectedReference();
+  if (!selected) return;
+  selected.checked = false;
+  syncReference();
+  clearResult();
+  item.focus({ preventScroll: true });
+});
+
 function clearResult() {
   result.hidden = true;
   statusMessage.textContent = '';
@@ -173,6 +462,7 @@ function field(label, values) {
   return select;
 }
 function updateForm() {
+  syncReference();
   const repairing = kind.value === 'repair';
   photoField.hidden = !repairing;
   task.placeholder = keepShortWords(repairing ? 'Что нужно исправить или заменить?' : 'Укажите примерные размеры и пожелания');
@@ -212,6 +502,7 @@ form.addEventListener('submit', event => {
     return;
   }
   const lines = [kind.selectedOptions[0].text, 'Мебель: ' + item.value];
+  if (selectedReference()) lines.push('Пример из каталога: ' + referenceTitle.textContent);
   for (const select of grid.querySelectorAll('select:not(:disabled)')) {
     if (select.value) lines.push(keepShortWords(select.dataset.label + ': ' + select.value));
   }
@@ -224,14 +515,40 @@ form.addEventListener('submit', event => {
   summary.focus();
   statusMessage.textContent = keepShortWords('Описание готово.');
 });
-document.querySelector('#copy').addEventListener('click', async () => {
+async function copyText(field, status, successMessage) {
   try {
-    await navigator.clipboard.writeText(summary.value);
-    statusMessage.textContent = keepShortWords('Описание скопировано.');
+    await navigator.clipboard.writeText(field.value.trim());
+    status.textContent = keepShortWords(successMessage);
   } catch {
-    summary.select();
-    statusMessage.textContent = keepShortWords('Текст выделен. Скопируйте его через меню или сочетанием Ctrl+C.');
+    field.select();
+    status.textContent = keepShortWords('Текст выделен. Скопируйте его через меню или сочетание Ctrl+C.');
   }
+}
+
+document.querySelector('#copy').addEventListener('click', () => {
+  copyText(summary, statusMessage, 'Описание скопировано.');
+});
+
+function setupCopyForm(id, emptyMessage, successMessage) {
+  const draft = document.getElementById(id);
+  const text = draft.querySelector('textarea');
+  const status = draft.querySelector('.status');
+  draft.addEventListener('input', () => { status.textContent = ''; });
+  draft.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!text.value.trim()) {
+      status.textContent = emptyMessage;
+      text.focus();
+      return;
+    }
+    copyText(text, status, successMessage);
+  });
+}
+
+setupCopyForm('question-form', 'Напишите вопрос.', 'Вопрос скопирован.');
+setupCopyForm('review-form', 'Напишите отзыв.', 'Отзыв скопирован.');
+document.querySelector('.footer-question').addEventListener('click', () => {
+  document.getElementById('ask-question').open = true;
 });
 updateForm();
-</script></body></html>
+</script><script src="./catalog.js" defer></script></body></html>
